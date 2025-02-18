@@ -1,3 +1,5 @@
+Now working for OCaml 5.2!
+
 ``Stdcompat``: compatibility module for OCaml standard library
 ==============================================================
 
