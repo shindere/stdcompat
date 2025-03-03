@@ -1,7 +1,7 @@
 FROM ubuntu
 ARG UID=1000
 RUN apt-get update && apt-get install --yes autoconf automake unzip aspcud rsync \
-    git mercurial darcs wget build-essential sudo vim curl
+    git mercurial wget build-essential sudo vim curl
 RUN useradd -m -s /bin/bash ci --uid=${UID}
 RUN echo ci ALL=\(ALL\) NOPASSWD:ALL >/etc/sudoers
 USER ci
