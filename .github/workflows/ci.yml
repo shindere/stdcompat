@@ -45,7 +45,6 @@ jobs:
           - 5.0.0
           - 5.1.1
           - 5.2.1
-          - ocaml-variants.4.14.0+mingw64c
         exclude:
           - os: macos-latest
             ocaml-compiler: ocaml-variants.4.14.0+mingw64c
