@@ -29,13 +29,10 @@ jobs:
         run: |
           opam exec -- sh -xc ".github/scripts/build-${{ matrix.builder }}.sh"
 
-  build-macos-and-windows:
+  build-macos:
     strategy:
       fail-fast: false
       matrix:
-        os:
-          - macos-latest
-          - windows-latest
         builder:
           - dune
           - make
@@ -45,10 +42,32 @@ jobs:
           - 5.0.0
           - 5.1.1
           - 5.2.1
-        exclude:
-          - os: macos-latest
-            ocaml-compiler: ocaml-variants.4.14.0+mingw64c
-    runs-on: ${{ matrix.os }}
+    runs-on: macos-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v3
+      - name: Setup OCaml
+        uses: ocaml/setup-ocaml@v3
+        with:
+          ocaml-compiler: ${{ matrix.ocaml-compiler }}
+      - name: Make stdcompat
+        run: |
+          opam exec -- sh -xc ".github/scripts/build-${{ matrix.builder }}.sh"
+
+  build-windows:
+    strategy:
+      fail-fast: false
+      matrix:
+        builder:
+          - dune
+          - make
+          - make-no-magic
+        ocaml-compiler:
+          - 4.14.x
+          - 5.0.0
+          - 5.1.1
+          - 5.2.1
+    runs-on: windows-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v3
