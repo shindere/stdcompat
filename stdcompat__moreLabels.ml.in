@@ -1,9 +1,9 @@
-@BEGIN_FROM_5_1_0@
+@BEGIN_FROM_5_0_0@
 module Hashtbl = MoreLabels.Hashtbl
-@END_FROM_5_1_0@
-@BEGIN_BEFORE_5_1_0@
+@END_FROM_5_0_0@
+@BEGIN_BEFORE_5_0_0@
 module Hashtbl = Stdcompat__hashtbl
-@END_BEFORE_5_1_0@
+@END_BEFORE_5_0_0@
 
 @BEGIN_FROM_5_1_0@
 module Map = MoreLabels.Map
