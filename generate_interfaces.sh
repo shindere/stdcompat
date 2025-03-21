@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -e
 
-opam config exec --switch=4.07.0+rc1 -- \
+opam exec --switch=4.07.0+rc1 -- \
   ocamlfind ocamlc -g -package unix,compiler-libs.common -linkpkg \
     interface_generator.ml -o interface_generator
 
