@@ -1,0 +1,939 @@
+--- array.mli	2025-03-24 11:57:53.540275608 +0100
++++ ../../5.3/stdlib/array.mli	2025-03-24 11:57:57.812345998 +0100
+@@ -50,7 +50,7 @@
+    @raise Invalid_argument
+    if [n] is outside the range 0 to [length a - 1]. *)
+ 
+-external make : int -> 'a -> 'a array = "caml_make_vect"
++external make : int -> 'a -> 'a array = "caml_array_make"
+ (** [make n x] returns a fresh array of length [n],
+    initialized with [x].
+    All the elements of this new array are initially
+@@ -63,7 +63,7 @@
+    If the value of [x] is a floating-point number, then the maximum
+    size is only [Sys.max_array_length / 2].*)
+ 
+-external create_float: int -> float array = "caml_make_float_vect"
++external create_float: int -> float array = "caml_array_create_float"
+ (** [create_float n] returns a fresh float array of length [n],
+     with uninitialized data.
+     @since 4.03 *)
+@@ -326,7 +326,7 @@
+ 
+    When [sort] returns, [a] contains the same elements as before,
+    reordered in such a way that for all i and j valid indices of [a] :
+--   [cmp a.(i) a.(j)] >= 0 if and only if i >= j
++-   [cmp a.(i) a.(j)] >= 0 if i >= j
+ *)
+ 
+ val stable_sort : ('a -> 'a -> int) -> 'a array -> unit
+--- arrayLabels.mli	2025-03-24 11:57:53.540275608 +0100
++++ ../../5.3/stdlib/arrayLabels.mli	2025-03-24 11:57:57.812345998 +0100
+@@ -50,7 +50,7 @@
+    @raise Invalid_argument
+    if [n] is outside the range 0 to [length a - 1]. *)
+ 
+-external make : int -> 'a -> 'a array = "caml_make_vect"
++external make : int -> 'a -> 'a array = "caml_array_make"
+ (** [make n x] returns a fresh array of length [n],
+    initialized with [x].
+    All the elements of this new array are initially
+@@ -63,7 +63,7 @@
+    If the value of [x] is a floating-point number, then the maximum
+    size is only [Sys.max_array_length / 2].*)
+ 
+-external create_float: int -> float array = "caml_make_float_vect"
++external create_float: int -> float array = "caml_array_create_float"
+ (** [create_float n] returns a fresh float array of length [n],
+     with uninitialized data.
+     @since 4.03 *)
+@@ -326,7 +326,7 @@
+ 
+    When [sort] returns, [a] contains the same elements as before,
+    reordered in such a way that for all i and j valid indices of [a] :
+--   [cmp a.(i) a.(j)] >= 0 if and only if i >= j
++-   [cmp a.(i) a.(j)] >= 0 if i >= j
+ *)
+ 
+ val stable_sort : cmp:('a -> 'a -> int) -> 'a array -> unit
+--- bigarray.mli	2025-03-24 11:57:53.540275608 +0100
++++ ../../5.3/stdlib/bigarray.mli	2025-03-24 11:57:57.812345998 +0100
+@@ -61,7 +61,7 @@
+      and {!Stdlib.input_value}).
+ *)
+ 
+-(** {1 Element kinds} *)
++(** {1:elementkinds Element kinds} *)
+ 
+ (** Bigarrays can contain elements of the following kinds:
+ - IEEE half precision (16 bits) floating-point numbers
+@@ -186,7 +186,12 @@
+ (** See {!Bigarray.char}. *)
+ 
+ val int : (int, int_elt) kind
+-(** See {!Bigarray.char}. *)
++(** See {!Bigarray.char} and {!section:elementkinds}.
++
++   Beware that this is a bigarray containing OCaml integers
++   (signed, 31 bits on 32-bit architectures, 63 bits on 64-bit architectures),
++   which does not match the [C] int type.
++ *)
+ 
+ val int32 : (int32, int32_elt) kind
+ (** See {!Bigarray.char}. *)
+--- bytes.mli	2025-03-24 11:57:53.540275608 +0100
++++ ../../5.3/stdlib/bytes.mli	2025-03-24 11:57:57.812345998 +0100
+@@ -332,9 +332,9 @@
+     This section describes unsafe, low-level conversion functions
+     between [bytes] and [string]. They do not copy the internal data;
+     used improperly, they can break the immutability invariant on
+-    strings provided by the [-safe-string] option. They are available for
+-    expert library authors, but for most purposes you should use the
+-    always-correct {!to_string} and {!of_string} instead.
++    strings. They are available for expert library authors, but for
++    most purposes you should use the always-correct {!to_string} and
++    {!of_string} instead.
+ *)
+ 
+ val unsafe_to_string : bytes -> string
+--- bytesLabels.mli	2025-03-24 11:57:53.540275608 +0100
++++ ../../5.3/stdlib/bytesLabels.mli	2025-03-24 11:57:57.812345998 +0100
+@@ -332,9 +332,9 @@
+     This section describes unsafe, low-level conversion functions
+     between [bytes] and [string]. They do not copy the internal data;
+     used improperly, they can break the immutability invariant on
+-    strings provided by the [-safe-string] option. They are available for
+-    expert library authors, but for most purposes you should use the
+-    always-correct {!to_string} and {!of_string} instead.
++    strings. They are available for expert library authors, but for
++    most purposes you should use the always-correct {!to_string} and
++    {!of_string} instead.
+ *)
+ 
+ val unsafe_to_string : bytes -> string
+--- camlinternalOO.mli	2025-03-24 11:57:53.540275608 +0100
++++ ../../5.3/stdlib/camlinternalOO.mli	2025-03-24 11:57:57.812345998 +0100
+@@ -46,16 +46,16 @@
+ val init_class : table -> unit
+ val inherits :
+     table -> string array -> string array -> string array ->
+-    (t * (table -> obj -> Obj.t) * t * obj) -> bool -> Obj.t array
++    (t * (table -> obj -> Obj.t) * obj) -> bool -> Obj.t array
+ val make_class :
+     string array -> (table -> Obj.t -> t) ->
+-    (t * (table -> Obj.t -> t) * (Obj.t -> t) * Obj.t)
++    (t * (table -> Obj.t -> t) * Obj.t)
+ type init_table
+ val make_class_store :
+     string array -> (table -> t) -> init_table -> unit
+ val dummy_class :
+     string * int * int ->
+-    (t * (table -> Obj.t -> t) * (Obj.t -> t) * Obj.t)
++    (t * (table -> Obj.t -> t) * Obj.t)
+ 
+ (** {1 Objects} *)
+ 
+--- domain.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/domain.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -91,6 +91,18 @@
+ 
+     The value returned is at least [1]. *)
+ 
++val self_index : unit -> int
++(** The index of the current domain. It is an integer unique among
++    currently-running domains, in the interval [0; N-1] where N is the
++    peak number of domains running simultaneously so far.
++
++    The index of a terminated domain may be reused for a new
++    domain. Use [(Domain.self () :> int)] instead for an identifier
++    unique among all domains ever created by the program.
++
++    @since 5.3
++*)
++
+ module DLS : sig
+ (** Domain-local Storage *)
+ 
+@@ -99,7 +111,7 @@
+ 
+     val new_key : ?split_from_parent:('a -> 'a) -> (unit -> 'a) -> 'a key
+     (** [new_key f] returns a new key bound to initialiser [f] for accessing
+-,        domain-local variables.
++        domain-local variables.
+ 
+         If [split_from_parent] is not provided, the value for a new
+         domain will be computed on-demand by the new domain: the first
+--- dynarray.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/dynarray.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -23,7 +23,7 @@
+ 
+     This is typically used to accumulate elements whose number is not
+     known in advance or changes during computation, while also
+-    providing fast access to elements at arbitrary positions.
++    providing fast access to elements at arbitrary indices.
+ 
+ {[
+     let dynarray_of_list li =
+@@ -39,10 +39,6 @@
+     The {!Stack} module provides a last-in first-out data structure
+     that can be easily implemented on top of dynamic arrays.
+ 
+-    {b Warning.} In their current implementation, the memory layout
+-    of dynamic arrays differs from the one of {!Array}s. See the
+-    {{!section:memory_layout} Memory Layout} section for more information.
+-
+     @since 5.2
+ *)
+ 
+@@ -185,6 +181,23 @@
+     [1], [2], and then [3] at the end of [a].
+     [append_iter a Queue.iter q] adds elements from the queue [q]. *)
+ 
++val blit : src:'a t -> src_pos:int -> dst:'a t -> dst_pos:int -> len:int -> unit
++(** [blit ~src ~src_pos ~dst ~dst_pos ~len] copies [len] elements from
++    a source dynarray [src], starting at index [src_pos], to
++    a destination dynarray [dst], starting at index [dst_pos]. It
++    works correctly even if [src] and [dst] are the same array, and
++    the source and destination chunks overlap.
++
++    Unlike {!Array.blit}, {!Dynarray.blit} can extend the destination
++    array with new elements: it is valid to call [blit] even when
++    [dst_pos + len] is larger than [length dst]. The only requirement
++    is that [dst_pos] must be at most [length dst] (included), so that
++    there is no gap between the current elements and the blit
++    region.
++
++    @raise Invalid_argument if [src_pos] and [len] do not designate
++    a valid subarray of [src], or if [dst_pos] is strictly below [0]
++    or strictly above [length dst]. *)
+ 
+ (** {1:removing Removing elements} *)
+ 
+@@ -274,21 +287,6 @@
+     where [x0], [x1], ..., [xn] are the elements of [a].
+ *)
+ 
+-val exists : ('a -> bool) -> 'a t -> bool
+-(** [exists f a] is [true] if some element of [a] satisfies [f].
+-
+-    For example, if the elements of [a] are [x0], [x1], [x2], then
+-    [exists f a] is [f x0 || f x1 || f x2].
+-*)
+-
+-val for_all : ('a -> bool) -> 'a t -> bool
+-(** [for_all f a] is [true] if all elements of [a] satisfy [f].
+-    This includes the case where [a] is empty.
+-
+-    For example, if the elements of [a] are [x0], [x1], then
+-    [exists f a] is [f x0 && f x1 && f x2].
+-*)
+-
+ val filter : ('a -> bool) -> 'a t -> 'a t
+ (** [filter f a] is a new array of all the elements of [a] that satisfy [f].
+     In other words, it is an array [b] such that, for each element [x]
+@@ -312,6 +310,97 @@
+     ignoring strings that cannot be converted to integers.
+ *)
+ 
++(** {1:dynarray_scanning Dynarray scanning } *)
++
++val exists : ('a -> bool) -> 'a t -> bool
++(** [exists f a] is [true] if some element of [a] satisfies [f].
++
++    For example, if the elements of [a] are [x0], [x1], [x2], then
++    [exists f a] is [f x0 || f x1 || f x2].
++*)
++
++val for_all : ('a -> bool) -> 'a t -> bool
++(** [for_all f a] is [true] if all elements of [a] satisfy [f].
++    This includes the case where [a] is empty.
++
++    For example, if the elements of [a] are [x0], [x1], then
++    [exists f a] is [f x0 && f x1 && f x2].
++*)
++
++val mem : 'a -> 'a t -> bool
++(** [mem a set] is true if and only if [a] is structurally equal
++    to an element of [set] (i.e. there is an [x] in [set] such that
++    [compare a x = 0]).
++
++    @since 5.3
++*)
++
++val memq : 'a -> 'a t -> bool
++(** Same as {!mem}, but uses physical equality
++    instead of structural equality to compare array elements.
++
++    @since 5.3
++ *)
++
++val find_opt : ('a -> bool) -> 'a t -> 'a option
++(** [find_opt f a] returns the first element of the array [a] that satisfies
++    the predicate [f], or [None] if there is no value that satisfies [f] in the
++    array [a].
++
++    @since 5.3
++*)
++
++val find_index : ('a -> bool) -> 'a t -> int option
++(** [find_index f a] returns [Some i], where [i] is the index of the first
++    element of the array [a] that satisfies [f x], if there is such an
++    element.
++
++    It returns [None] if there is no such element.
++
++    @since 5.3
++*)
++
++val find_map : ('a -> 'b option) -> 'a t -> 'b option
++(** [find_map f a] applies [f] to the elements of [a] in order, and returns the
++    first result of the form [Some v], or [None] if none exist.
++
++    @since 5.3
++*)
++
++val find_mapi : (int -> 'a -> 'b option) -> 'a t -> 'b option
++(** Same as [find_map], but the predicate is applied to the index of
++   the element as first argument (counting from 0), and the element
++   itself as second argument.
++
++   @since 5.3
++ *)
++
++(** {1:comparison Comparison functions}
++
++    Comparison functions iterate over their arguments; it is
++    a programming error to change their length during the iteration,
++    see the {{!section:iteration} Iteration} section above.
++ *)
++
++val equal : ('a -> 'a -> bool) -> 'a t -> 'a t -> bool
++(** [equal eq a b] holds when [a] and [b] have the same length,
++    and for all indices [i] we have [eq (get a i) (get b i)].
++
++    @since 5.3
++*)
++
++val compare : ('a -> 'a -> int) -> 'a t -> 'a t -> int
++(** Provided the function [cmp] defines a preorder on elements,
++    [compare cmp a b] compares first [a] and [b] by their length,
++    and then, if equal, by their elements according to
++    the lexicographic preorder.
++
++    For more details on comparison functions, see {!Array.sort}.
++
++    @since 5.3
++*)
++
++
+ (** {1:conversions Conversions to other data structures}
+ 
+     Note: the [of_*] functions raise [Invalid_argument] if the
+@@ -489,39 +578,11 @@
+ (** {2:noleaks No leaks: preservation of memory liveness}
+ 
+     The user-provided values reachable from a dynamic array [a] are
+-    exactly the elements in the positions [0] to [length a - 1]. In
++    exactly the elements in the indices [0] to [length a - 1]. In
+     particular, no user-provided values are "leaked" by being present
+-    in the backing array in position [length a] or later.
++    in the backing array at index [length a] or later.
+ *)
+ 
+-(** {2:memory_layout Memory layout of dynarrays}
+-
+-    In the current implementation, the backing array of an
+-    ['a Dynarray.t] is not an ['a array], but something with the same
+-    representation as an ['a option array] or ['a ref array].
+-    Each element is in a "box", allocated when the element is first
+-    added to the array -- see the implementation for more details.
+-
+-    Using an ['a array] would be delicate, as there is no obvious
+-    type-correct way to represent the empty space at the end of the
+-    backing array -- using user-provided values would either
+-    complicate the API or violate the {{!section:noleaks}no leaks}
+-    guarantee. The constraint of remaining memory-safe under
+-    unsynchronized concurrent usage makes it even more
+-    difficult. Various unsafe ways to do this have been discussed,
+-    with no consensus on a standard implementation so far.
+-
+-    On a realistic automated-theorem-proving program that relies
+-    heavily on dynamic arrays, we measured the overhead of this extra
+-    "boxing" as at most 25%. We believe that the overhead for most
+-    uses of dynarray is much smaller, negligible in many cases, but
+-    you may still prefer to use your own specialized implementation
+-    for performance. (If you know that you do not need the
+-    {{:noleaks}no leaks} guarantee, you can also speed up deleting
+-    elements.)
+-*)
+-
+-
+ 
+ (** {1:examples Code examples}
+ 
+@@ -606,7 +667,7 @@
+       let last = Dynarray.length h - 1 in
+       swap h 0 last;
+       (* At this point [pop_last] returns the 'best' value,
+-         and leaves a heap with one misplaced element at position 0. *)
++         and leaves a heap with one misplaced element at index [0]. *)
+       let best = Dynarray.pop_last h in
+       (* Restore the heap ordering -- does nothing if the heap is empty. *)
+       heap_down h ~len:last 0;
+--- effect.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/effect.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -22,7 +22,7 @@
+ 
+     @since 5.0 *)
+ 
+-type _ t = ..
++type 'a t = 'a eff = ..
+ (** The type of effects. *)
+ 
+ exception Unhandled : 'a t -> exn
+@@ -41,7 +41,7 @@
+ module Deep : sig
+   (** Deep handlers *)
+ 
+-  type ('a,'b) continuation
++  type nonrec ('a,'b) continuation = ('a,'b) continuation
+   (** [('a,'b) continuation] is a delimited continuation that expects a ['a]
+       value and returns a ['b] value. *)
+ 
+--- float.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/float.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -351,7 +351,7 @@
+   [@@unboxed] [@@noalloc]
+ (** Complementary error function ([erfc x = 1 - erf x]).
+     The argument ranges over the entire real line.
+-    The result is always within [[-1.0, 1.0]].
++    The result is always within [[0.0, 2.0]].
+ 
+     @since 4.13
+ *)
+@@ -727,7 +727,7 @@
+ 
+       When [sort] returns, [a] contains the same elements as before,
+       reordered in such a way that for all i and j valid indices of [a] :
+-  -      [cmp a.(i) a.(j)] >= 0 if and only if i >= j
++  -      [cmp a.(i) a.(j)] >= 0 if i >= j
+   *)
+ 
+   val stable_sort : (float -> float -> int) -> t -> unit
+@@ -1094,7 +1094,7 @@
+ 
+       When [sort] returns, [a] contains the same elements as before,
+       reordered in such a way that for all i and j valid indices of [a] :
+-  -      [cmp a.(i) a.(j)] >= 0 if and only if i >= j
++  -      [cmp a.(i) a.(j)] >= 0 if i >= j
+   *)
+ 
+   val stable_sort : cmp:(float -> float -> int) -> t -> unit
+--- format.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/format.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -235,6 +235,14 @@
+ val print_string : string -> unit
+ (** [pp_print_string ppf s] prints [s] in the current pretty-printing box. *)
+ 
++val pp_print_substring : pos:int -> len:int -> formatter -> string -> unit
++val print_substring : pos:int -> len:int -> string -> unit
++(** [pp_print_substring ~pos ~len ppf s] prints the substring of [s] that starts
++    at position [pos] and stops at position [pos+len] in the current
++    pretty-printing box.
++  @since 5.3
++*)
++
+ val pp_print_bytes : formatter -> bytes -> unit
+ val print_bytes : bytes -> unit
+ (** [pp_print_bytes ppf b] prints [b] in the current pretty-printing box.
+@@ -247,6 +255,15 @@
+   The pretty-printer formats [s] as if it were of length [len].
+ *)
+ 
++val pp_print_substring_as :
++  pos:int -> len:int -> formatter -> int -> string -> unit
++val print_substring_as : pos:int -> len:int -> int -> string -> unit
++(** [pp_print_substring_as ~first ~len ppf len_as s] prints the substring of [s]
++  that starts at position [pos] and stop at position [pos+len] in the current
++  pretty-printing box as if it were of length [len_as].
++  @since 5.1
++*)
++
+ val pp_print_int : formatter -> int -> unit
+ val print_int : int -> unit
+ (** Print an integer in the current pretty-printing box. *)
+--- gc.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/gc.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -42,7 +42,7 @@
+ 
+     heap_chunks : int;
+     (** Number of contiguous pieces of memory that make up the major heap.
+-        This metrics is currently not available in OCaml 5: the field value is
++        This metric is currently not available in OCaml 5: the field value is
+         always [0]. *)
+ 
+     live_words : int;
+@@ -71,12 +71,12 @@
+ 
+     free_blocks : int;
+     (** Number of blocks in the free list.
+-        This metrics is currently not available in OCaml 5: the field value is
++        This metric is currently not available in OCaml 5: the field value is
+         always [0]. *)
+ 
+     largest_free : int;
+     (** Size (in words) of the largest block in the free list.
+-        This metrics is currently not available in OCaml 5: the field value
++        This metric is currently not available in OCaml 5: the field value
+         is always [0]. *)
+ 
+     fragments : int;
+@@ -92,7 +92,7 @@
+ 
+     stack_size: int;
+     (** Current size of the stack, in words.
+-        This metrics is currently not available in OCaml 5: the field value is
++        This metric is currently not available in OCaml 5: the field value is
+         always [0].
+         @since 3.12 *)
+ 
+@@ -122,7 +122,10 @@
+         number is less than or equal to 1000, it is a percentage of
+         the current heap size (i.e. setting it to 100 will double the heap
+         size at each increase). If it is more than 1000, it is a fixed
+-        number of words that will be added to the heap. Default: 15. *)
++        number of words that will be added to the heap.
++
++        This field is currently not available in OCaml 5: the field value is
++        always [0]. *)
+ 
+     space_overhead : int;
+     (** The major GC speed is computed from this parameter.
+@@ -157,16 +160,19 @@
+        compaction is triggered at the end of each major GC cycle
+        (this setting is intended for testing purposes only).
+        If [max_overhead >= 1000000], compaction is never triggered.
+-       Default: 500. *)
++
++       This field is currently not available in OCaml 5: the field value is
++       always [0]. *)
+ 
+     stack_limit : int;
+     (** The maximum size of the fiber stacks (in words).
+-       Default: 1024k. *)
++       Default: 128M. *)
+ 
+     allocation_policy : int;
+     (** The policy used for allocating in the major heap.
+ 
+-        This option is ignored in OCaml 5.x.
++        This field is currently not available in OCaml 5: the field value is
++        always [0].
+ 
+         Prior to OCaml 5.0, possible values were 0, 1 and 2.
+ 
+@@ -182,8 +188,10 @@
+     (** The size of the window used by the major GC for smoothing
+         out variations in its workload. This is an integer between
+         1 and 50.
+-        Default: 1.
+-        @since 4.03 *)
++        @since 4.03
++
++        This field is currently not available in OCaml 5: the field value is
++        always [0]. *)
+ 
+     custom_major_ratio : int;
+     (** Target ratio of floating garbage to major heap size for
+@@ -224,16 +232,19 @@
+ 
+ external stat : unit -> stat = "caml_gc_stat"
+ (** Return the current values of the memory management counters in a
+-   [stat] record that represent the program's total memory stats.
+-   This function causes a full major collection. *)
++    [stat] record that represents the program's total memory stats.
++    The [heap_chunks], [free_blocks], [largest_free], and [stack_size] metrics
++    are currently not available in OCaml 5: their returned field values are
++    therefore [0].
++    This function causes a full major collection. *)
+ 
+ external quick_stat : unit -> stat = "caml_gc_quick_stat"
+-(** Same as [stat] except that [live_words], [live_blocks], [free_words],
+-    [free_blocks], [largest_free], and [fragments] are set to 0. Due to
+-    per-domain buffers it may only represent the state of the program's
+-    total memory usage since the last minor collection or major cycle.
+-    This function is much faster than [stat] because it does not need to
+-    trigger a full major collection. *)
++(** Returns a record with the current values of the memory management counters
++    like [stat]. Unlike [stat], [quick_stat] does not perform a full major
++    collection, and hence, is much faster. However, [quick_stat] reports the
++    counters sampled at the last minor collection or at the end of the last
++    major collection cycle (whichever is the latest). Hence, the memory stats
++    returned by [quick_stat] are not instantaneously accurate. *)
+ 
+ external counters : unit -> float * float * float = "caml_gc_counters"
+ (** Return [(minor_words, promoted_words, major_words)] for the current
+@@ -254,14 +265,22 @@
+ [@@alert unsynchronized_access
+     "GC parameters are a mutable global state."
+ ]
+-(** Return the current values of the GC parameters in a [control] record. *)
++(** Return the current values of the GC parameters in a [control] record.
++
++    The [major_heap_increment], [max_overhead], [allocation_policy], and
++    [window_size] fields are currently not available in OCaml 5: their returned
++    field values are therefore [0]. *)
+ 
+ external set : control -> unit = "caml_gc_set"
+ [@@alert unsynchronized_access
+     "GC parameters are a mutable global state."
+ ]
+- (** [set r] changes the GC parameters according to the [control] record [r].
+-   The normal usage is: [Gc.set { (Gc.get()) with Gc.verbose = 0x00d }] *)
++(** [set r] changes the GC parameters according to the [control] record [r].
++    The normal usage is: [Gc.set { (Gc.get()) with Gc.verbose = 0x00d }]
++
++    The [major_heap_increment], [max_overhead], [allocation_policy], and
++    [window_size] fields are currently not available in OCaml 5: setting them
++    therefore has no effect. *)
+ 
+ external minor : unit -> unit = "caml_gc_minor"
+ (** Trigger a minor collection. *)
+@@ -462,8 +481,7 @@
+         (** The size of the block, in words, excluding the header. *)
+ 
+         source : allocation_source;
+-        (** The cause of the allocation; [Marshal] cannot be produced
+-          since OCaml 5. *)
++        (** The cause of the allocation. *)
+ 
+         callstack : Printexc.raw_backtrace
+         (** The callstack for the allocation. *)
+@@ -507,7 +525,7 @@
+        the sampling rate in samples per word (including headers).
+        Usually, with cheap callbacks, a rate of 1e-4 has no visible
+        effect on performance, and 1e-3 causes the program to run a few
+-       percent slower.
++       percent slower. 0.0 <= sampling_rate <= 1.0.
+ 
+        The parameter [callstack_size] is the length of the callstack
+        recorded at every sample. Its default is [max_int].
+@@ -515,12 +533,12 @@
+        The parameter [tracker] determines how to track sampled blocks
+        over their lifetime in the minor and major heap.
+ 
+-       Sampling is temporarily disabled on the current thread when
+-       calling a callback, so callbacks do not need to be re-entrant
+-       if the program is single-threaded and single-domain. However,
+-       if threads or multiple domains are used, it is possible that
+-       several callbacks will run in parallel. In this case, callback
+-       functions must be re-entrant.
++       Sampling and running callbacks are temporarily disabled on the
++       current thread when calling a callback, so callbacks do not
++       need to be re-entrant if the program is single-threaded and
++       single-domain. However, if threads or multiple domains are
++       used, it is possible that several callbacks will run in
++       parallel. In this case, callback functions must be re-entrant.
+ 
+        Note that a callback may be postponed slightly after the actual
+        event. The callstack passed to an allocation callback always
+@@ -528,30 +546,32 @@
+        have evolved between the allocation and the call to the
+        callback.
+ 
+-       If a new thread or domain is created when profiling is active,
+-       the child thread or domain joins that profile (using the same
+-       [sampling_rate], [callstack_size], and [tracker] callbacks).
++       If a new thread or domain is created when the current domain is
++       sampling for a profile, the child thread or domain joins that
++       profile (using the same [sampling_rate], [callstack_size], and
++       [tracker] callbacks).
+ 
+-       An allocation callback is generally run by the thread which
++       An allocation callback is always run by the thread which
+        allocated the block. If the thread exits or the profile is
+-       stopped before the callback is called, the callback may be run
+-       by a different thread.
++       stopped before the callback is called, the allocation callback
++       is not called and the block is not tracked.
+ 
+-       Each callback is generally run by the domain which allocated
+-       the block. If the domain terminates or the profile is stopped
+-       before the callback is called, the callback may be run by a
+-       different domain.
++       Each subsequent callback is generally run by the domain which
++       allocated the block. If the domain terminates or the profile is
++       stopped before the callback is called, the callback may be run
++       by a different domain.
+ 
+-       Different domains may run different profiles simultaneously.
+-       *)
++       Different domains may sample for different profiles
++       simultaneously.  *)
+ 
+     val stop : unit -> unit
+     (** Stop sampling for the current profile. Fails if no profile is
+        sampling in the current domain. Stops sampling in all threads
+        and domains sharing the profile.
+ 
+-       Callbacks from a profile may run after [stop] is called, until
+-       [discard] is applied to the profile.
++       Promotion and deallocation callbacks from a profile may run
++       after [stop] is called, until [discard] is applied to the
++       profile.
+ 
+        A profile is implicitly stopped (but not discarded) if all
+        domains and threads sampling for it are terminated.
+--- hashtbl.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/hashtbl.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -64,11 +64,12 @@
+ 
+ val create : ?random: (* thwart tools/sync_stdlib_docs *) bool ->
+              int -> ('a, 'b) t
+-(** [Hashtbl.create n] creates a new, empty hash table, with
+-   initial size [n].  For best results, [n] should be on the
+-   order of the expected number of elements that will be in
+-   the table.  The table grows as needed, so [n] is just an
+-   initial guess.
++(** [Hashtbl.create n] creates a new, empty hash table, with initial
++   size greater or equal to the suggested size [n].  For best results,
++   [n] should be on the order of the expected number of elements that
++   will be in the table.  The table grows as needed, so [n] is just an
++   initial guess.  If [n] is very small or negative then it is
++   disregarded and a small default size is used.
+ 
+    The optional [~random] parameter (a boolean) controls whether
+    the internal organization of the hash table is randomized at each
+--- list.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/list.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -359,6 +359,44 @@
+    @since 4.11
+ *)
+ 
++
++(** {1 List manipulation} *)
++
++
++val take : int -> 'a list -> 'a list
++(** [take n l] returns the prefix of [l] of length [n],
++    or a copy of [l] if [n > length l].
++
++    [n] must be nonnegative.
++
++    @raise Invalid_argument if [n] is negative.
++    @since 5.3
++*)
++
++val drop : int -> 'a list -> 'a list
++(** [drop n l] returns the suffix of [l] after [n] elements,
++    or [[]] if [n > length l].
++
++    [n] must be nonnegative.
++
++    @raise Invalid_argument if [n] is negative.
++    @since 5.3
++*)
++
++val take_while : ('a -> bool) -> 'a list -> 'a list
++(** [take_while p l] is the longest (possibly empty) prefix of [l]
++    containing only elements that satisfy [p].
++
++    @since 5.3
++*)
++
++val drop_while : ('a -> bool) -> 'a list -> 'a list
++(** [drop_while p l] is the longest (possibly empty) suffix of [l]
++    starting at the first element that does not satisfy [p].
++
++    @since 5.3
++*)
++
+ val partition : ('a -> bool) -> 'a list -> 'a list * 'a list
+ (** [partition f l] returns a pair of lists [(l1, l2)], where
+    [l1] is the list of all the elements of [l] that
+--- listLabels.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/listLabels.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -359,6 +359,44 @@
+    @since 4.11
+ *)
+ 
++
++(** {1 List manipulation} *)
++
++
++val take : int -> 'a list -> 'a list
++(** [take n l] returns the prefix of [l] of length [n],
++    or a copy of [l] if [n > length l].
++
++    [n] must be nonnegative.
++
++    @raise Invalid_argument if [n] is negative.
++    @since 5.3
++*)
++
++val drop : int -> 'a list -> 'a list
++(** [drop n l] returns the suffix of [l] after [n] elements,
++    or [[]] if [n > length l].
++
++    [n] must be nonnegative.
++
++    @raise Invalid_argument if [n] is negative.
++    @since 5.3
++*)
++
++val take_while : f:('a -> bool) -> 'a list -> 'a list
++(** [take_while p l] is the longest (possibly empty) prefix of [l]
++    containing only elements that satisfy [p].
++
++    @since 5.3
++*)
++
++val drop_while : f:('a -> bool) -> 'a list -> 'a list
++(** [drop_while p l] is the longest (possibly empty) suffix of [l]
++    starting at the first element that does not satisfy [p].
++
++    @since 5.3
++*)
++
+ val partition : f:('a -> bool) -> 'a list -> 'a list * 'a list
+ (** [partition ~f l] returns a pair of lists [(l1, l2)], where
+    [l1] is the list of all the elements of [l] that
+--- marshal.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/marshal.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -191,6 +191,6 @@
+     Care must be taken when marshaling a mutable value that may be modified by
+     a different domain. Mutating a value that is being marshaled (i.e., turned
+     into a sequence of bytes) is a programming error and might result in
+-    suprising values (when unmarshaling) due to tearing, since marshaling
++    surprising values (when unmarshaling) due to tearing, since marshaling
+     involves byte-per-byte copy.
+ *)
+--- moreLabels.mli	2025-03-24 11:57:53.544275674 +0100
++++ ../../5.3/stdlib/moreLabels.mli	2025-03-24 11:57:57.816346063 +0100
+@@ -81,11 +81,12 @@
+ 
+   val create : ?random: (* thwart tools/sync_stdlib_docs *) bool ->
+                int -> ('a, 'b) t
+-  (** [Hashtbl.create n] creates a new, empty hash table, with
+-     initial size [n].  For best results, [n] should be on the
+-     order of the expected number of elements that will be in
+-     the table.  The table grows as needed, so [n] is just an
+-     initial guess.
++  (** [Hashtbl.create n] creates a new, empty hash table, with initial
++     size greater or equal to the suggested size [n].  For best results,
++     [n] should be on the order of the expected number of elements that
++     will be in the table.  The table grows as needed, so [n] is just an
++     initial guess.  If [n] is very small or negative then it is
++     disregarded and a small default size is used.
+ 
+      The optional [~random] parameter (a boolean) controls whether
+      the internal organization of the hash table is randomized at each
+--- printexc.mli	2025-03-24 11:57:53.548275740 +0100
++++ ../../5.3/stdlib/printexc.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -104,7 +104,7 @@
+ 
+ val use_printers: exn -> string option
+ (** [Printexc.use_printers e] returns [None] if there are no registered
+-    printers and [Some s] with else as the resulting string otherwise.
++    printers and [Some s] with [s] the resulting string otherwise.
+     @since 4.09
+ *)
+ 
+--- queue.mli	2025-03-24 11:57:53.548275740 +0100
++++ ../../5.3/stdlib/queue.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -72,6 +72,11 @@
+ val top : 'a t -> 'a
+ (** [top] is a synonym for [peek]. *)
+ 
++val drop : 'a t -> unit
++(** [drop q] removes the first element in queue [q], or raises {!Empty}
++   if the queue is empty.
++   @since 5.3 *)
++
+ val clear : 'a t -> unit
+ (** Discard all elements from a queue. *)
+ 
+--- seq.mli	2025-03-24 11:57:53.548275740 +0100
++++ ../../5.3/stdlib/seq.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -504,8 +504,7 @@
+ 
+     [drop] is lazy: the first [n+1] elements of the sequence [xs]
+     are demanded only when the first element of [drop n xs] is
+-    demanded. For this reason, [drop 1 xs] is {i not} equivalent
+-    to [tail xs], which queries [xs] immediately.
++    demanded.
+ 
+     @raise Invalid_argument if [n] is negative.
+ 
+--- string.mli	2025-03-24 11:57:53.548275740 +0100
++++ ../../5.3/stdlib/string.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -347,8 +347,7 @@
+ 
+ val to_seq : t -> char Seq.t
+ (** [to_seq s] is a sequence made of the string's characters in
+-    increasing order. In ["unsafe-string"] mode, modifications of the string
+-    during iteration will be reflected in the sequence.
++    increasing order.
+ 
+     @since 4.07 *)
+ 
+--- stringLabels.mli	2025-03-24 11:57:53.548275740 +0100
++++ ../../5.3/stdlib/stringLabels.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -347,8 +347,7 @@
+ 
+ val to_seq : t -> char Seq.t
+ (** [to_seq s] is a sequence made of the string's characters in
+-    increasing order. In ["unsafe-string"] mode, modifications of the string
+-    during iteration will be reflected in the sequence.
++    increasing order.
+ 
+     @since 4.07 *)
+ 
+--- sys.mli	2025-03-24 11:57:53.548275740 +0100
++++ ../../5.3/stdlib/sys.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -208,6 +208,11 @@
+     as the contents of the [OCAMLRUNPARAM] environment variable.
+     @since 4.03 *)
+ 
++external poll_actions : unit -> unit = "%poll"
++(** Run any pending runtime actions, such as minor collections, major
++    GC slices, signal handlers, finalizers, or memprof callbacks.
++    @since 5.3 *)
++
+ 
+ (** {1 Signal handling} *)
+ 
+@@ -407,7 +412,9 @@
+ (** For the purposes of optimization, [opaque_identity] behaves like an
+     unknown (and thus possibly side-effecting) function.
+ 
+-    At runtime, [opaque_identity] disappears altogether.
++    At runtime, [opaque_identity] disappears altogether.  However, it does
++    prevent the argument from being garbage collected until the location
++    where the call would have occurred.
+ 
+     A typical use of this function is to prevent pure computations from being
+     optimized away in benchmarking loops.  For example:
+--- uchar.mli	2025-03-24 11:57:53.552275806 +0100
++++ ../../5.3/stdlib/uchar.mli	2025-03-24 11:57:57.820346129 +0100
+@@ -95,8 +95,19 @@
+ val compare : t -> t -> int
+ (** [compare u u'] is [Stdlib.compare u u']. *)
+ 
++val seeded_hash : int -> t -> int
++(** [seeded_hash seed u] A seeded hash function with the same output value as
++    {!Hashtbl.seeded_hash}. This function allows this module to be passed as an
++    argument to the functor {!Hashtbl.MakeSeeded}.
++
++    @since 5.3 *)
++
+ val hash : t -> int
+-(** [hash u] associates a non-negative integer to [u]. *)
++(** An unseeded hash function with the same output value as {!Hashtbl.hash}.
++    This function allows this module to be passed as an argument to the functor
++    {!Hashtbl.Make}.
++
++    @since 5.3 *)
+ 
+ (** {1:utf UTF codecs tools}
+ 
