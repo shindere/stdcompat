@@ -5,8 +5,8 @@ description:
 maintainer: "Thierry Martinez <martinez@nsup.org>"
 authors: "Thierry Martinez <martinez@nsup.org>"
 license: "BSD-2-Clause"
-homepage: "https://github.com/thierry-martinez/stdcompat"
-bug-reports: "https://github.com/thierry-martinez/stdcompat/issues"
+homepage: "https://github.com/ocamllibs/stdcompat"
+bug-reports: "https://github.com/ocamllibs/stdcompat/issues"
 depends: [
   "ocaml" {>= "3.07"}
   "dune" {>= "2.0"}
@@ -17,5 +17,5 @@ build: [
   ["dune" "build" "-p" name "-j" jobs]
   ["dune" "runtest" "-p" name "-j" jobs] {with-test}
 ]
-dev-repo: "git+https://github.com/thierry-martinez/stdcompat.git"
+dev-repo: "git+https://github.com/ocamllibs/stdcompat.git"
 version: "19"
