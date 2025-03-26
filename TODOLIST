@@ -1,0 +1,38 @@
+Features introduced in OCaml 5.3 and that stdcompat should provide
+backward support for, if only to say that they are not actually
+supported.
+
+## Features found in the OCaml Changes file for its release 5.3
+
+- #13272: Allow maximum number of domains to be specified as a OCAMLRUNPARAM
+  parameter.
+  (KC Sivaramakrishnan, review by Guillaume Munch-Maccagnoni, Miod Vallat,
+   Gabriel Scherer, David Allsopp, request by Zachary Yedidia).
+
+## Features found by comparing interfaces between 5.2 and 5.3
+
+Domains.self_index
+
+Dynarray.blit
+
+Dynarray.mem
+Dynarray.memq
+Dynarray.find_opt
+
+Dynarray.find_index
+
+Dynarray.find_map
+Dynarray.find_mapi
+Dynarray.equal
+Dynarray.compare
+Format.pp_print_substring
+Format.print_substring
+Format.pp_print_substring_as
+Format.print_substring_as
+List.take
+List.drop
+List.take_while
+List.drop_while
+Queue.drop
+Sys.poll_actions
+Uchar.seeded_hash
