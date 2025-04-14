@@ -842,7 +842,7 @@ EXTRA_DIST = stdcompat.opam dune stdcompat.ml stdcompat__native.ml_byte \
 	stdcompat__seq.mli stdcompat__printexc.mli \
         stdcompat__either.mli stdcompat__atomic.mli \
 	stdcompat__unit.mli \
-	stdcompat__in_channel.mli stdcompat__out_channel.mli Makefile.bootstrap VERSION \
+	stdcompat__in_channel.mli stdcompat__out_channel.mli autogen VERSION \
 	dune-project dune
 
 MODULES = stdcompat__init.ml stdcompat__root.ml \
