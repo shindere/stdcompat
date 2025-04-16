@@ -90,7 +90,7 @@ PRE_UNINSTALL = :
 POST_UNINSTALL = :
 @OCAML_SUPPORTS_BYTECODE_TRUE@am__append_1 = stdcompat.cma
 @OCAML_SUPPORTS_NATIVE_TRUE@am__append_2 = stdcompat.cmxa stdcompat$(LIBEXT) $(MODULES_native:.ml=.cmx)
-@OCAML_SUPPORTS_SHARED_TRUE@am__append_3 = stdcompat.cmxs
+@OCAML_SUPPORTS_NATIVE_TRUE@@OCAML_SUPPORTS_SHARED_TRUE@am__append_3 = stdcompat.cmxs
 @OCAML_SUPPORTS_BIN_ANNOT_TRUE@am__append_4 = -bin-annot
 @OCAML_SUPPORTS_BIN_ANNOT_TRUE@am__append_5 = $(MODULES_native:.ml=.cmt)
 @OCAML_SUPPORTS_NO_ALIAS_DEPS_TRUE@am__append_6 = -no-alias-deps
@@ -414,7 +414,7 @@ am__DIST_COMMON = $(srcdir)/META.in $(srcdir)/Makefile.in \
 	$(srcdir)/stdcompat__weak.mli.in \
 	$(srcdir)/stdcompat__weak_s.mli.in \
 	$(srcdir)/stdcompat_tests.ml.in AUTHORS COPYING INSTALL NEWS \
-	README compile install-sh missing
+	README.md compile install-sh missing
 DISTFILES = $(DIST_COMMON) $(DIST_SOURCES) $(TEXINFOS) $(EXTRA_DIST)
 distdir = $(PACKAGE)-$(VERSION)
 top_distdir = $(distdir)
