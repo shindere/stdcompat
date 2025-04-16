@@ -56,6 +56,8 @@ module Complex = Complex
 
 module Digest = Stdcompat__digest
 
+module Domain = Stdcompat__domain
+
 module Either = Stdcompat__either
 
 module Ephemeron = Stdcompat__ephemeron
