@@ -101,11 +101,11 @@ endif
 if OCAML_SUPPORTS_NATIVE
 mypkg_SCRIPTS += stdcompat.cmxa stdcompat$(LIBEXT) $(MODULES_native:.ml=.cmx)
 BEST_SUFFIX := .cmx
-endif
-
 if OCAML_SUPPORTS_SHARED
 mypkg_SCRIPTS += stdcompat.cmxs
 endif
+endif
+
 
 PACKAGES = $(RESULT_PKG) $(SEQ_PKG) $(UCHAR_PKG)
 OCAMLFLAGS = $(PACKAGES:%=-package %)
