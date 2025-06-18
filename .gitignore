@@ -31,7 +31,5 @@ _build/
 /config.h
 *.so
 /stdcompat__stubs.c
-/stdcompat__native.ml_native
-/stdcompat__native.ml_byte
 /stdcompat.h
 /stdcompat__domain.mli.in

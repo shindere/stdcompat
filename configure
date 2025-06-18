@@ -7676,10 +7676,6 @@ ac_config_files="$ac_config_files stdcompat__tools.mli"
 
 ac_config_files="$ac_config_files stdcompat__tools.ml"
 
-ac_config_files="$ac_config_files stdcompat__native.ml_byte"
-
-ac_config_files="$ac_config_files stdcompat__native.ml_native"
-
 ac_config_files="$ac_config_files stdcompat_tests.ml"
 
 ac_config_files="$ac_config_files stdcompat.h"
@@ -8844,8 +8840,6 @@ do
     "stdcompat__root.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__root.ml" ;;
     "stdcompat__tools.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__tools.mli" ;;
     "stdcompat__tools.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__tools.ml" ;;
-    "stdcompat__native.ml_byte") CONFIG_FILES="$CONFIG_FILES stdcompat__native.ml_byte" ;;
-    "stdcompat__native.ml_native") CONFIG_FILES="$CONFIG_FILES stdcompat__native.ml_native" ;;
     "stdcompat_tests.ml") CONFIG_FILES="$CONFIG_FILES stdcompat_tests.ml" ;;
     "stdcompat.h") CONFIG_FILES="$CONFIG_FILES stdcompat.h" ;;
     "stdcompat__stubs.c") CONFIG_FILES="$CONFIG_FILES stdcompat__stubs.c" ;;
