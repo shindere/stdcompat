@@ -136,8 +136,6 @@
   META
   Makefile
   stdcompat.h
-  stdcompat__native.ml_byte
-  stdcompat__native.ml_native
   stdcompat.ml
   stdcompat.mli
   stdcompat_tests.ml
@@ -434,8 +432,6 @@
   stdcompat__moreLabels.ml.in
   stdcompat__moreLabels.mli.in
   stdcompat__moreLabels_s.mli.in
-  stdcompat__native.ml_byte.in
-  stdcompat__native.ml_native.in
   stdcompat__nativeint.ml.in
   stdcompat__nativeint.mli.in
   stdcompat__nativeint_s.mli.in
