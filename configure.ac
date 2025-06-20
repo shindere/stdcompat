@@ -75,7 +75,6 @@ AS_IF([test "x$OCAMLFIND" = "x"],
    AC_CHECK_TOOL([OCAMLMKLIB], [ocamlmklib.opt], [])
    AS_IF([test "x$OCAMLMKLIB" = "x"],
      [AC_CHECK_TOOL([OCAMLMKLIB], [ocamlmklib], [])])
-   AC_SUBST([RESULT_PKG], [])
    AC_SUBST([SEQ_PKG], [])
    AC_SUBST([UCHAR_PKG], [])],
   [AC_SUBST([OCAMLC], [["$OCAMLFIND ocamlc"]])
@@ -83,7 +82,6 @@ AS_IF([test "x$OCAMLFIND" = "x"],
    AC_SUBST([OCAMLDOC], [["$OCAMLFIND ocamldoc"]])
    AC_SUBST([OCAMLDEP], [["$OCAMLFIND ocamldep"]])
    AC_SUBST([OCAMLMKLIB], [["$OCAMLFIND ocamlmklib"]])
-   AC_OCAMLFIND_PKG([RESULT_PKG], [result], [Result])
    AC_OCAMLFIND_PKG([SEQ_PKG], [seq], [Seq])
    AC_OCAMLFIND_PKG([UCHAR_PKG], [uchar], [Uchar])])
 
@@ -167,7 +165,6 @@ AS_IF([test "x$enable_magic" = "xno"],
   [AC_WITHOUT_BLOCK([MAGIC])],
   [AC_WITH_BLOCK([MAGIC])])
 
-AC_WITH_BLOCK_PKG([RESULT])
 AC_WITH_BLOCK_PKG([SEQ])
 AC_WITH_BLOCK_PKG([UCHAR])
 

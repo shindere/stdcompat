@@ -906,14 +906,6 @@ C_END_WITH_SEQ_PKG
 C_BEGIN_WITH_SEQ_PKG
 END_WITH_SEQ_PKG
 BEGIN_WITH_SEQ_PKG
-C_END_WITHOUT_RESULT_PKG
-C_BEGIN_WITHOUT_RESULT_PKG
-END_WITHOUT_RESULT_PKG
-BEGIN_WITHOUT_RESULT_PKG
-C_END_WITH_RESULT_PKG
-C_BEGIN_WITH_RESULT_PKG
-END_WITH_RESULT_PKG
-BEGIN_WITH_RESULT_PKG
 C_END_WITHOUT_MAGIC
 C_BEGIN_WITHOUT_MAGIC
 END_WITHOUT_MAGIC
@@ -946,7 +938,6 @@ CMAX
 OCAMLBEST
 UCHAR_PKG
 SEQ_PKG
-RESULT_PKG
 OCAMLMKLIB
 OCAMLDEP
 OCAMLDOC
@@ -4881,7 +4872,6 @@ fi
 fi
 
 
-
 else case e in #(
   e) OCAMLC="$OCAMLFIND ocamlc"
 
@@ -4893,35 +4883,6 @@ else case e in #(
 
    OCAMLMKLIB="$OCAMLFIND ocamlmklib"
 
-   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ocamlfind package result" >&5
-printf %s "checking for ocamlfind package result... " >&6; }
-   if $OCAMLFIND query result >/dev/null 2>&1
-then :
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }
-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if package result is usable" >&5
-printf %s "checking if package result is usable... " >&6; }
-      echo "module M = Result" > configure_test.ml
-      if $OCAMLFIND c -package result  configure_test.ml -o configure_test.out >/dev/null 2>&1
-then :
-  rm -f configure_test.ml configure_test.cmo configure_test.cmi configure_test.out
-         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }
-         RESULT_PKG=result
-
-else case e in #(
-  e) rm -f configure_test.ml configure_test.cmo configure_test.cmi configure_test.out
-         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
-printf "%s\n" "no" >&6; }
-          ;;
-esac
-fi
-else case e in #(
-  e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
-printf "%s\n" "no" >&6; }
-       ;;
-esac
-fi
    { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ocamlfind package seq" >&5
 printf %s "checking for ocamlfind package seq... " >&6; }
    if $OCAMLFIND query seq >/dev/null 2>&1
@@ -6651,35 +6612,6 @@ else case e in #(
 esac
 fi
 
-if test "x$RESULT_PKG" = "x"
-then :
-  BEGIN_WITH_RESULT_PKG='(*'
-
-   END_WITH_RESULT_PKG='*)'
-
-   C_BEGIN_WITH_RESULT_PKG='#if 0'
-
-   C_END_WITH_RESULT_PKG='#endif'
-
-
-
-
-
-else case e in #(
-  e)
-
-
-
-   BEGIN_WITHOUT_RESULT_PKG='(*'
-
-   END_WITHOUT_RESULT_PKG='*)'
-
-   C_BEGIN_WITHOUT_RESULT_PKG='#if 0'
-
-   C_END_WITHOUT_RESULT_PKG='#endif'
- ;;
-esac
-fi
 if test "x$SEQ_PKG" = "x"
 then :
   BEGIN_WITH_SEQ_PKG='(*'
