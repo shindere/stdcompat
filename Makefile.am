@@ -107,7 +107,7 @@ endif
 endif
 
 
-PACKAGES = $(SEQ_PKG) $(UCHAR_PKG)
+PACKAGES = $(UCHAR_PKG)
 OCAMLFLAGS = $(PACKAGES:%=-package %)
 OCAMLCFLAGS = $(OCAMLFLAGS) -nolabels -I @srcdir@
 OCAMLLDFLAGS = $(OCAMLFLAGS)

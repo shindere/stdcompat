@@ -1,5 +1,5 @@
 description = "Stdcompat: compatibility module for OCaml standard library"
-requires = "@SEQ_PKG@ @UCHAR_PKG@"
+requires = "@UCHAR_PKG@"
 version = "@VERSION@"
 archive(byte) = "stdcompat.cma"
 archive(native) = "stdcompat.cmxa"
