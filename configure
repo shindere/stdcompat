@@ -890,14 +890,6 @@ C_END_FROM_3_07_0
 C_BEGIN_FROM_3_07_0
 END_FROM_3_07_0
 BEGIN_FROM_3_07_0
-C_END_WITHOUT_UCHAR_PKG
-C_BEGIN_WITHOUT_UCHAR_PKG
-END_WITHOUT_UCHAR_PKG
-BEGIN_WITHOUT_UCHAR_PKG
-C_END_WITH_UCHAR_PKG
-C_BEGIN_WITH_UCHAR_PKG
-END_WITH_UCHAR_PKG
-BEGIN_WITH_UCHAR_PKG
 C_END_WITHOUT_MAGIC
 C_BEGIN_WITHOUT_MAGIC
 END_WITHOUT_MAGIC
@@ -928,7 +920,6 @@ CFLAGS
 CC
 CMAX
 OCAMLBEST
-UCHAR_PKG
 OCAMLMKLIB
 OCAMLDEP
 OCAMLDOC
@@ -4861,7 +4852,6 @@ else
 fi
 
 fi
-
 else case e in #(
   e) OCAMLC="$OCAMLFIND ocamlc"
 
@@ -4872,36 +4862,7 @@ else case e in #(
    OCAMLDEP="$OCAMLFIND ocamldep"
 
    OCAMLMKLIB="$OCAMLFIND ocamlmklib"
-
-   { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking for ocamlfind package uchar" >&5
-printf %s "checking for ocamlfind package uchar... " >&6; }
-   if $OCAMLFIND query uchar >/dev/null 2>&1
-then :
-  { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }
-      { printf "%s\n" "$as_me:${as_lineno-$LINENO}: checking if package uchar is usable" >&5
-printf %s "checking if package uchar is usable... " >&6; }
-      echo "module M = Uchar" > configure_test.ml
-      if $OCAMLFIND c -package uchar  configure_test.ml -o configure_test.out >/dev/null 2>&1
-then :
-  rm -f configure_test.ml configure_test.cmo configure_test.cmi configure_test.out
-         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: yes" >&5
-printf "%s\n" "yes" >&6; }
-         UCHAR_PKG=uchar
-
-else case e in #(
-  e) rm -f configure_test.ml configure_test.cmo configure_test.cmi configure_test.out
-         { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
-printf "%s\n" "no" >&6; }
-          ;;
-esac
-fi
-else case e in #(
-  e) { printf "%s\n" "$as_me:${as_lineno-$LINENO}: result: no" >&5
-printf "%s\n" "no" >&6; }
-       ;;
-esac
-fi ;;
+ ;;
 esac
 fi
 
@@ -6569,36 +6530,6 @@ else case e in #(
    C_BEGIN_WITHOUT_MAGIC='#if 0'
 
    C_END_WITHOUT_MAGIC='#endif'
- ;;
-esac
-fi
-
-if test "x$UCHAR_PKG" = "x"
-then :
-  BEGIN_WITH_UCHAR_PKG='(*'
-
-   END_WITH_UCHAR_PKG='*)'
-
-   C_BEGIN_WITH_UCHAR_PKG='#if 0'
-
-   C_END_WITH_UCHAR_PKG='#endif'
-
-
-
-
-
-else case e in #(
-  e)
-
-
-
-   BEGIN_WITHOUT_UCHAR_PKG='(*'
-
-   END_WITHOUT_UCHAR_PKG='*)'
-
-   C_BEGIN_WITHOUT_UCHAR_PKG='#if 0'
-
-   C_END_WITHOUT_UCHAR_PKG='#endif'
  ;;
 esac
 fi
