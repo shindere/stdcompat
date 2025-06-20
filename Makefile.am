@@ -106,8 +106,7 @@ mypkg_SCRIPTS += stdcompat.cmxs
 endif
 endif
 
-
-PACKAGES = $(UCHAR_PKG)
+PACKAGES =
 OCAMLFLAGS = $(PACKAGES:%=-package %)
 OCAMLCFLAGS = $(OCAMLFLAGS) -nolabels -I @srcdir@
 OCAMLLDFLAGS = $(OCAMLFLAGS)
