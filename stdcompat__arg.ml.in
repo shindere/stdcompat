@@ -7,7 +7,7 @@ exception Help of string
 exception Bad of string
 
 let not_implemented () =
-  failwith "Stdcompat.Arg is not fully implemented yet. Please fill an issue: https://github.com/thierry-martinez/stdcompat/issues ."
+  failwith "Stdcompat.Arg is not fully implemented yet. Please fill an issue: https://github.com/ocamllibs/stdcompat/issues ."
 
 type spec =
   | Unit of (unit -> unit)

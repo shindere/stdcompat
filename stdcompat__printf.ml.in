@@ -1,6 +1,6 @@
 @BEGIN_BEFORE_4_11_0@
 let not_implemented _ =
-  failwith "Stdcompat.Printf is not implemented yet. Please fill an issue: https://github.com/thierry-martinez/stdcompat/issues ."
+  failwith "Stdcompat.Printf is not implemented yet. Please fill an issue: https://github.com/ocamllibs/stdcompat/issues ."
 
 let ikbprintf = not_implemented
 

@@ -85,7 +85,7 @@ MODULES = stdcompat__init.ml stdcompat__root.ml \
 # We prefer DLLEXT to conform with EXEEXT and OBJEXT
 DLLEXT := $(shell ocamlc -config | awk -F '[\t\r ]+' '/^ext_dll:/ {print $$2}')
 
-# Fix install on Windows (https://github.com/thierry-martinez/pyml/issues/88)
+# Fix install on Windows (https://github.com/ocamllibs/pyml/issues/88)
 LIBEXT := $(shell ocamlc -config | awk -F '[\t\r ]+' '/^ext_lib:/ {print $$2}')
 
 MODULES_native = stdcompat__native.ml $(MODULES)
