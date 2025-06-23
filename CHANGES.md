@@ -8,7 +8,7 @@
   (reported by Kay-Uwe Kirstein)
 
 - Fix `Makefile`-based build system on Windows.
-  (reported by Noteeeeeee, https://github.com/thierry-martinez/pyml/issues/88 )
+  (reported by Noteeeeeee, https://github.com/ocamllibs/pyml/issues/88 )
 
 - Upstream `opam-repository-mingw` patch for DLL extensions
   (suggested by Kay-Uwe Kirstein)
@@ -23,13 +23,13 @@
   `Set` and `Map.{iter, fold, filter_map}` on OCaml 3.07
 
 - Updated port to `dune`
-  (Marek Kubica, https://github.com/thierry-martinez/stdcompat/pull/16,
-   https://github.com/thierry-martinez/stdcompat/pull/19
+  (Marek Kubica, https://github.com/ocamllibs/stdcompat/pull/16,
+   https://github.com/ocamllibs/stdcompat/pull/19
    with contribution from Kate,
-   https://github.com/thierry-martinez/stdcompat/pull/21 )
+   https://github.com/ocamllibs/stdcompat/pull/21 )
 
 - Add support for `flambda2`
-  (Guillaume Bury, https://github.com/thierry-martinez/stdcompat/pull/14 )
+  (Guillaume Bury, https://github.com/ocamllibs/stdcompat/pull/14 )
 
 - Prevent replacing `/dev/null/` by a regular file when `./configure` is
   run as root
@@ -206,7 +206,7 @@
   However, automake generated a COPYING file with the GPLv3 by default. The
   COPYING file now contains the BSD license, and the LICENSE file is removed.
   (reported by Török Edwin,
-   https://github.com/thierry-martinez/stdcompat/issues/5)
+   https://github.com/ocamllibs/stdcompat/issues/5)
 
 - Fix auto-generated interfaces for Hashtbl.MakeSeeded
 
@@ -236,13 +236,13 @@
 
 - Split implementation into one module for each standard library module
   (suggested by Yotam Barnoy:
-   https://github.com/thierry-martinez/stdcompat/issues/4)
+   https://github.com/ocamllibs/stdcompat/issues/4)
 
 - All modules are now exported as sub-modules of Stdlib module
   (as in OCaml 4.07) -- Bigarray is not exported to allow programs not
   to be compiled with this module, this may change in the future.
   (suggested by Yotam Barnoy:
-   https://github.com/thierry-martinez/stdcompat/issues/4)
+   https://github.com/ocamllibs/stdcompat/issues/4)
 
 - Compatibility with uchar package
 
@@ -253,10 +253,10 @@
 - Missing List.of_seq/List.to_seq
 - Remove spurious Float.seeded_hash_param
   (suggested by Hezekiah M. Carty:
-   https://github.com/thierry-martinez/stdcompat/pull/2)
+   https://github.com/ocamllibs/stdcompat/pull/2)
 - Compatibility with seq and result packages
   (suggested by Hezekiah M. Carty:
-   https://github.com/thierry-martinez/stdcompat/issues/1)
+   https://github.com/ocamllibs/stdcompat/issues/1)
 - Magic implementations of {Set,Map,Hashtbl,Queue,Stack}.to_seq*,
   Hashtbl.filter_map_inplace, Hashtbl.stats, Stack.fold,
   Set.find*, Set.map.

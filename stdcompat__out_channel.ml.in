@@ -75,7 +75,7 @@ let output_substring = Stdcompat__pervasives.output_substring
 let set_binary_mode = set_binary_mode_out
 
 let set_buffered _ _ =
-  failwith "Stdcompat.Out_channel.set_buffered is not implemented yet. Please fill an issue: https://github.com/thierry-martinez/stdcompat/issues ."
+  failwith "Stdcompat.Out_channel.set_buffered is not implemented yet. Please fill an issue: https://github.com/ocamllibs/stdcompat/issues ."
 
 let is_buffered _ = true
 @END_BEFORE_4_14_0@

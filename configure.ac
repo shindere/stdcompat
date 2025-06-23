@@ -1,6 +1,6 @@
 AC_INIT([[stdcompat]], m4_esyscmd([tr -d '\n' <VERSION]),
-  [[Thierry.Martinez@inria.fr]], [[stdcompat]],
-  [[https://github.com/thierry.martinez/stdcompat/]])
+  [[https://github.com/ocamllibs/stdcompat/issues]], [[stdcompat]],
+  [[https://github.com/ocamllibs/stdcompat/]])
 AM_INIT_AUTOMAKE([foreign])
 AM_MAINTAINER_MODE
 
