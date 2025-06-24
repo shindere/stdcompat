@@ -110,7 +110,7 @@ CONFIG_CLEAN_FILES = META stdcompat__hashtbl_ext.mli \
 	stdcompat__hashtbl_ext.ml stdcompat__init.mli \
 	stdcompat__init.ml stdcompat__root.mli stdcompat__root.ml \
 	stdcompat__tools.mli stdcompat__tools.ml stdcompat_tests.ml \
-	stdcompat.h stdcompat__stubs.c stdcompat__pervasives_s.mli \
+	stdcompat__stubs.c stdcompat__pervasives_s.mli \
 	stdcompat__arg_s.mli stdcompat__array_s.mli \
 	stdcompat__arrayLabels_s.mli stdcompat__atomic_s.mli \
 	stdcompat__bool_s.mli stdcompat__buffer_s.mli \
@@ -265,9 +265,9 @@ am__define_uniq_tagged_files = \
   done | $(am__uniquify_input)`
 AM_RECURSIVE_TARGETS = cscope
 am__DIST_COMMON = $(srcdir)/META.in $(srcdir)/Makefile.in \
-	$(srcdir)/config.h.in $(srcdir)/stdcompat.h.in \
-	$(srcdir)/stdcompat.ml.in $(srcdir)/stdcompat.mli.in \
-	$(srcdir)/stdcompat__arg.ml.in $(srcdir)/stdcompat__arg.mli.in \
+	$(srcdir)/config.h.in $(srcdir)/stdcompat.ml.in \
+	$(srcdir)/stdcompat.mli.in $(srcdir)/stdcompat__arg.ml.in \
+	$(srcdir)/stdcompat__arg.mli.in \
 	$(srcdir)/stdcompat__arg_s.mli.in \
 	$(srcdir)/stdcompat__array.ml.in \
 	$(srcdir)/stdcompat__array.mli.in \
@@ -878,8 +878,8 @@ DLLEXT := $(shell ocamlc -config | awk -F '[\t\r ]+' '/^ext_dll:/ {print $$2}')
 LIBEXT := $(shell ocamlc -config | awk -F '[\t\r ]+' '/^ext_lib:/ {print $$2}')
 MODULES_native = stdcompat__native.ml $(MODULES)
 mypkg_SCRIPTS = META $(MODULES_native) $(MODULES_native:.ml=.cmi) \
-	libstdcompat__stubs$(LIBEXT) stdcompat.h $(am__append_1) \
-	$(am__append_2) $(am__append_3) $(am__append_5)
+	libstdcompat__stubs$(LIBEXT) $(am__append_1) $(am__append_2) \
+	$(am__append_3) $(am__append_5)
 @OCAML_SUPPORTS_BYTECODE_TRUE@BEST_SUFFIX := .cmo
 @OCAML_SUPPORTS_NATIVE_TRUE@BEST_SUFFIX := .cmx
 PACKAGES = 
@@ -966,8 +966,6 @@ stdcompat__tools.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__tools.m
 stdcompat__tools.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__tools.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat_tests.ml: $(top_builddir)/config.status $(srcdir)/stdcompat_tests.ml.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat.h: $(top_builddir)/config.status $(srcdir)/stdcompat.h.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__stubs.c: $(top_builddir)/config.status $(srcdir)/stdcompat__stubs.c.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@

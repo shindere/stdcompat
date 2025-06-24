@@ -7476,8 +7476,6 @@ ac_config_files="$ac_config_files stdcompat__tools.ml"
 
 ac_config_files="$ac_config_files stdcompat_tests.ml"
 
-ac_config_files="$ac_config_files stdcompat.h"
-
 ac_config_files="$ac_config_files stdcompat__stubs.c"
 
 ac_config_files="$ac_config_files stdcompat__pervasives_s.mli"
@@ -8639,7 +8637,6 @@ do
     "stdcompat__tools.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__tools.mli" ;;
     "stdcompat__tools.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__tools.ml" ;;
     "stdcompat_tests.ml") CONFIG_FILES="$CONFIG_FILES stdcompat_tests.ml" ;;
-    "stdcompat.h") CONFIG_FILES="$CONFIG_FILES stdcompat.h" ;;
     "stdcompat__stubs.c") CONFIG_FILES="$CONFIG_FILES stdcompat__stubs.c" ;;
     "stdcompat__pervasives_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__pervasives_s.mli" ;;
     "stdcompat__arg_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__arg_s.mli" ;;
