@@ -81,7 +81,7 @@ let int_size =
    else
      assert false
 
-let big_endian = @BIG_ENDIAN@
+let big_endian = Sys.big_endian
 
 let runtime_variant () = ""
 
