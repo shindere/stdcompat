@@ -28,8 +28,7 @@ _build/
 /config.status
 /config.sub
 /stamp-h1
-/config.h
 *.so
 /stdcompat__stubs.c
-/stdcompat.h
 /stdcompat__domain.mli.in
+/stdcompat_tests
