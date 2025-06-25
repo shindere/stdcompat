@@ -94,11 +94,7 @@ AC_MSG_NOTICE([the best OCaml compiler is $OCAMLBEST])
 AS_IF([test "x$OCAMLDEP" = "x"],
   [AC_MSG_ERROR([[No ocamldep available]])])
 
-AC_CONFIG_HEADERS([config.h])
-AC_C_BIGENDIAN(
-  [AC_SUBST([BIG_ENDIAN], [[true]])],
-  [AC_SUBST([BIG_ENDIAN], [[false]])],
-  [AC_MSG_ERROR([[Unknown endianness]])])
+AC_SUBST([OBJEXT], [[`$OCAMLBEST -config-var ext_obj | sed 's/^[.]//g'`]])
 
 AC_MSG_CHECKING([OCaml target OS type])
 

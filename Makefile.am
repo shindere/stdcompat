@@ -81,6 +81,8 @@ MODULES = stdcompat__init.ml stdcompat__root.ml \
 	stdcompat__unit.ml \
 	stdcompat__stdlib.ml stdcompat.ml
 
+OBJEXT := @OBJEXT@
+
 # From https://github.com/fdopen/opam-repository-mingw/commit/3b4c52e17cfae96cfbf5120b60b8c2bbf5aad252
 # We prefer DLLEXT to conform with EXEEXT and OBJEXT
 DLLEXT := $(shell ocamlc -config | awk -F '[\t\r ]+' '/^ext_dll:/ {print $$2}')

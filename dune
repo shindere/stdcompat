@@ -338,7 +338,6 @@
   install-sh
   META.in
   Makefile.in
-  config.h.in
   stdcompat.ml.in
   stdcompat.mli.in
   stdcompat__arg.ml.in
