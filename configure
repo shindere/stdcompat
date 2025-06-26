@@ -5341,10 +5341,6 @@ ac_config_files="$ac_config_files stdcompat__init.mli"
 
 ac_config_files="$ac_config_files stdcompat__init.ml:stdcompat__init.mli.in"
 
-ac_config_files="$ac_config_files stdcompat__root.mli"
-
-ac_config_files="$ac_config_files stdcompat__root.ml"
-
 ac_config_files="$ac_config_files stdcompat__tools.mli"
 
 ac_config_files="$ac_config_files stdcompat__tools.ml"
@@ -5371,8 +5367,6 @@ ac_config_files="$ac_config_files stdcompat__bytes_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__bytesLabels_s.mli"
 
-ac_config_files="$ac_config_files stdcompat__char_s.mli"
-
 ac_config_files="$ac_config_files stdcompat__digest_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__domain_s.mli"
@@ -5381,19 +5375,13 @@ ac_config_files="$ac_config_files stdcompat__either_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__ephemeron_s.mli"
 
-ac_config_files="$ac_config_files stdcompat__filename_s.mli"
-
 ac_config_files="$ac_config_files stdcompat__float_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__format_s.mli"
 
-ac_config_files="$ac_config_files stdcompat__fun_s.mli"
-
 ac_config_files="$ac_config_files stdcompat__hashtbl_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__in_channel_s.mli"
-
-ac_config_files="$ac_config_files stdcompat__int_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__int32_s.mli"
 
@@ -5465,8 +5453,8 @@ ac_config_files="$ac_config_files stdcompat__bytes_s.ml:stdcompat__bytes_s.mli.i
 
 ac_config_files="$ac_config_files stdcompat__bytesLabels_s.ml:stdcompat__bytesLabels_s.mli.in"
 
-ac_config_files="$ac_config_files stdcompat__char_s.ml:stdcompat__char_s.mli.in"
-
+ac_config_files="$ac_config_files stdcompat__char_s.ml:stdcompat__char_s.mli"
+ # LINK
 ac_config_files="$ac_config_files stdcompat__digest_s.ml:stdcompat__digest_s.mli.in"
 
 ac_config_files="$ac_config_files stdcompat__domain_s.ml:stdcompat__domain_s.mli.in"
@@ -5475,17 +5463,15 @@ ac_config_files="$ac_config_files stdcompat__either_s.ml:stdcompat__either_s.mli
 
 ac_config_files="$ac_config_files stdcompat__ephemeron_s.ml:stdcompat__ephemeron_s.mli.in"
 
-ac_config_files="$ac_config_files stdcompat__filename_s.ml:stdcompat__filename_s.mli.in"
-
+ac_config_files="$ac_config_files stdcompat__filename_s.ml:stdcompat__filename_s.mli"
+ # LINK
 ac_config_files="$ac_config_files stdcompat__float_s.ml:stdcompat__float_s.mli.in"
 
 ac_config_files="$ac_config_files stdcompat__format_s.ml:stdcompat__format_s.mli.in"
 
-ac_config_files="$ac_config_files stdcompat__fun_s.ml:stdcompat__fun_s.mli.in"
-
+ac_config_files="$ac_config_files stdcompat__fun_s.ml:stdcompat__fun_s.mli"
+ # LINK
 ac_config_files="$ac_config_files stdcompat__hashtbl_s.ml:stdcompat__hashtbl_s.mli.in"
-
-ac_config_files="$ac_config_files stdcompat__int_s.ml:stdcompat__int_s.mli.in"
 
 ac_config_files="$ac_config_files stdcompat__int32_s.ml:stdcompat__int32_s.mli.in"
 
@@ -5557,8 +5543,6 @@ ac_config_files="$ac_config_files stdcompat__buffer.ml"
 
 ac_config_files="$ac_config_files stdcompat__bytes.ml"
 
-ac_config_files="$ac_config_files stdcompat__bytesLabels.ml"
-
 ac_config_files="$ac_config_files stdcompat__char.ml"
 
 ac_config_files="$ac_config_files stdcompat__digest.ml"
@@ -5591,8 +5575,6 @@ ac_config_files="$ac_config_files stdcompat__lexing.ml"
 
 ac_config_files="$ac_config_files stdcompat__list.ml"
 
-ac_config_files="$ac_config_files stdcompat__listLabels.ml"
-
 ac_config_files="$ac_config_files stdcompat__map.ml"
 
 ac_config_files="$ac_config_files stdcompat__moreLabels.ml"
@@ -5621,8 +5603,6 @@ ac_config_files="$ac_config_files stdcompat__stdlib.ml"
 
 ac_config_files="$ac_config_files stdcompat__string.ml"
 
-ac_config_files="$ac_config_files stdcompat__stringLabels.ml"
-
 ac_config_files="$ac_config_files stdcompat__sys.ml"
 
 ac_config_files="$ac_config_files stdcompat__uchar.ml"
@@ -5634,104 +5614,6 @@ ac_config_files="$ac_config_files stdcompat__in_channel.ml"
 ac_config_files="$ac_config_files stdcompat__out_channel.ml"
 
 ac_config_files="$ac_config_files stdcompat__unit.ml"
-
-ac_config_files="$ac_config_files stdcompat__pervasives.mli"
-
-ac_config_files="$ac_config_files stdcompat__arg.mli"
-
-ac_config_files="$ac_config_files stdcompat__array.mli"
-
-ac_config_files="$ac_config_files stdcompat__arrayLabels.mli"
-
-ac_config_files="$ac_config_files stdcompat__atomic.mli"
-
-ac_config_files="$ac_config_files stdcompat__bool.mli"
-
-ac_config_files="$ac_config_files stdcompat__buffer.mli"
-
-ac_config_files="$ac_config_files stdcompat__bytes.mli"
-
-ac_config_files="$ac_config_files stdcompat__bytesLabels.mli"
-
-ac_config_files="$ac_config_files stdcompat__char.mli"
-
-ac_config_files="$ac_config_files stdcompat__digest.mli"
-
-ac_config_files="$ac_config_files stdcompat__domain.mli"
-
-ac_config_files="$ac_config_files stdcompat__either.mli"
-
-ac_config_files="$ac_config_files stdcompat__ephemeron.mli"
-
-ac_config_files="$ac_config_files stdcompat__filename.mli"
-
-ac_config_files="$ac_config_files stdcompat__float.mli"
-
-ac_config_files="$ac_config_files stdcompat__format.mli"
-
-ac_config_files="$ac_config_files stdcompat__fun.mli"
-
-ac_config_files="$ac_config_files stdcompat__hashtbl.mli"
-
-ac_config_files="$ac_config_files stdcompat__int.mli"
-
-ac_config_files="$ac_config_files stdcompat__int32.mli"
-
-ac_config_files="$ac_config_files stdcompat__int64.mli"
-
-ac_config_files="$ac_config_files stdcompat__lazy.mli"
-
-ac_config_files="$ac_config_files stdcompat__lexing.mli"
-
-ac_config_files="$ac_config_files stdcompat__list.mli"
-
-ac_config_files="$ac_config_files stdcompat__listLabels.mli"
-
-ac_config_files="$ac_config_files stdcompat__map.mli"
-
-ac_config_files="$ac_config_files stdcompat__moreLabels.mli"
-
-ac_config_files="$ac_config_files stdcompat__nativeint.mli"
-
-ac_config_files="$ac_config_files stdcompat__option.mli"
-
-ac_config_files="$ac_config_files stdcompat__printexc.mli"
-
-ac_config_files="$ac_config_files stdcompat__printf.mli"
-
-ac_config_files="$ac_config_files stdcompat__queue.mli"
-
-ac_config_files="$ac_config_files stdcompat__random.mli"
-
-ac_config_files="$ac_config_files stdcompat__result.mli"
-
-ac_config_files="$ac_config_files stdcompat__seq.mli"
-
-ac_config_files="$ac_config_files stdcompat__set.mli"
-
-ac_config_files="$ac_config_files stdcompat__stack.mli"
-
-ac_config_files="$ac_config_files stdcompat__stdlib.mli"
-
-ac_config_files="$ac_config_files stdcompat__string.mli"
-
-ac_config_files="$ac_config_files stdcompat__stringLabels.mli"
-
-ac_config_files="$ac_config_files stdcompat__sys.mli"
-
-ac_config_files="$ac_config_files stdcompat__uchar.mli"
-
-ac_config_files="$ac_config_files stdcompat__weak.mli"
-
-ac_config_files="$ac_config_files stdcompat__in_channel.mli"
-
-ac_config_files="$ac_config_files stdcompat__out_channel.mli"
-
-ac_config_files="$ac_config_files stdcompat__unit.mli"
-
-ac_config_files="$ac_config_files stdcompat.mli"
-
-ac_config_files="$ac_config_files stdcompat.ml"
 
 
 cat >confcache <<\_ACEOF
@@ -6494,8 +6376,6 @@ do
     "stdcompat__hashtbl_ext.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__hashtbl_ext.ml" ;;
     "stdcompat__init.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__init.mli" ;;
     "stdcompat__init.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__init.ml:stdcompat__init.mli.in" ;;
-    "stdcompat__root.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__root.mli" ;;
-    "stdcompat__root.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__root.ml" ;;
     "stdcompat__tools.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__tools.mli" ;;
     "stdcompat__tools.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__tools.ml" ;;
     "stdcompat_tests.ml") CONFIG_FILES="$CONFIG_FILES stdcompat_tests.ml" ;;
@@ -6509,18 +6389,14 @@ do
     "stdcompat__buffer_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__buffer_s.mli" ;;
     "stdcompat__bytes_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__bytes_s.mli" ;;
     "stdcompat__bytesLabels_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__bytesLabels_s.mli" ;;
-    "stdcompat__char_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__char_s.mli" ;;
     "stdcompat__digest_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__digest_s.mli" ;;
     "stdcompat__domain_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__domain_s.mli" ;;
     "stdcompat__either_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__either_s.mli" ;;
     "stdcompat__ephemeron_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron_s.mli" ;;
-    "stdcompat__filename_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__filename_s.mli" ;;
     "stdcompat__float_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__float_s.mli" ;;
     "stdcompat__format_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__format_s.mli" ;;
-    "stdcompat__fun_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__fun_s.mli" ;;
     "stdcompat__hashtbl_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__hashtbl_s.mli" ;;
     "stdcompat__in_channel_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__in_channel_s.mli" ;;
-    "stdcompat__int_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__int_s.mli" ;;
     "stdcompat__int32_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__int32_s.mli" ;;
     "stdcompat__int64_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__int64_s.mli" ;;
     "stdcompat__lazy_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__lazy_s.mli" ;;
@@ -6556,17 +6432,16 @@ do
     "stdcompat__buffer_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__buffer_s.ml:stdcompat__buffer_s.mli.in" ;;
     "stdcompat__bytes_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__bytes_s.ml:stdcompat__bytes_s.mli.in" ;;
     "stdcompat__bytesLabels_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__bytesLabels_s.ml:stdcompat__bytesLabels_s.mli.in" ;;
-    "stdcompat__char_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__char_s.ml:stdcompat__char_s.mli.in" ;;
+    "stdcompat__char_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__char_s.ml:stdcompat__char_s.mli" ;;
     "stdcompat__digest_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__digest_s.ml:stdcompat__digest_s.mli.in" ;;
     "stdcompat__domain_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__domain_s.ml:stdcompat__domain_s.mli.in" ;;
     "stdcompat__either_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__either_s.ml:stdcompat__either_s.mli.in" ;;
     "stdcompat__ephemeron_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron_s.ml:stdcompat__ephemeron_s.mli.in" ;;
-    "stdcompat__filename_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__filename_s.ml:stdcompat__filename_s.mli.in" ;;
+    "stdcompat__filename_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__filename_s.ml:stdcompat__filename_s.mli" ;;
     "stdcompat__float_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__float_s.ml:stdcompat__float_s.mli.in" ;;
     "stdcompat__format_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__format_s.ml:stdcompat__format_s.mli.in" ;;
-    "stdcompat__fun_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__fun_s.ml:stdcompat__fun_s.mli.in" ;;
+    "stdcompat__fun_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__fun_s.ml:stdcompat__fun_s.mli" ;;
     "stdcompat__hashtbl_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__hashtbl_s.ml:stdcompat__hashtbl_s.mli.in" ;;
-    "stdcompat__int_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__int_s.ml:stdcompat__int_s.mli.in" ;;
     "stdcompat__int32_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__int32_s.ml:stdcompat__int32_s.mli.in" ;;
     "stdcompat__int64_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__int64_s.ml:stdcompat__int64_s.mli.in" ;;
     "stdcompat__lazy_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__lazy_s.ml:stdcompat__lazy_s.mli.in" ;;
@@ -6602,7 +6477,6 @@ do
     "stdcompat__bool.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__bool.ml" ;;
     "stdcompat__buffer.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__buffer.ml" ;;
     "stdcompat__bytes.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__bytes.ml" ;;
-    "stdcompat__bytesLabels.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__bytesLabels.ml" ;;
     "stdcompat__char.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__char.ml" ;;
     "stdcompat__digest.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__digest.ml" ;;
     "stdcompat__domain.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__domain.ml" ;;
@@ -6619,7 +6493,6 @@ do
     "stdcompat__lazy.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__lazy.ml" ;;
     "stdcompat__lexing.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__lexing.ml" ;;
     "stdcompat__list.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__list.ml" ;;
-    "stdcompat__listLabels.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__listLabels.ml" ;;
     "stdcompat__map.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__map.ml" ;;
     "stdcompat__moreLabels.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__moreLabels.ml" ;;
     "stdcompat__nativeint.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__nativeint.ml" ;;
@@ -6634,62 +6507,12 @@ do
     "stdcompat__stack.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__stack.ml" ;;
     "stdcompat__stdlib.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__stdlib.ml" ;;
     "stdcompat__string.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__string.ml" ;;
-    "stdcompat__stringLabels.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__stringLabels.ml" ;;
     "stdcompat__sys.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__sys.ml" ;;
     "stdcompat__uchar.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__uchar.ml" ;;
     "stdcompat__weak.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__weak.ml" ;;
     "stdcompat__in_channel.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__in_channel.ml" ;;
     "stdcompat__out_channel.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__out_channel.ml" ;;
     "stdcompat__unit.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__unit.ml" ;;
-    "stdcompat__pervasives.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__pervasives.mli" ;;
-    "stdcompat__arg.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__arg.mli" ;;
-    "stdcompat__array.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__array.mli" ;;
-    "stdcompat__arrayLabels.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__arrayLabels.mli" ;;
-    "stdcompat__atomic.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__atomic.mli" ;;
-    "stdcompat__bool.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__bool.mli" ;;
-    "stdcompat__buffer.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__buffer.mli" ;;
-    "stdcompat__bytes.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__bytes.mli" ;;
-    "stdcompat__bytesLabels.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__bytesLabels.mli" ;;
-    "stdcompat__char.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__char.mli" ;;
-    "stdcompat__digest.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__digest.mli" ;;
-    "stdcompat__domain.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__domain.mli" ;;
-    "stdcompat__either.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__either.mli" ;;
-    "stdcompat__ephemeron.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron.mli" ;;
-    "stdcompat__filename.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__filename.mli" ;;
-    "stdcompat__float.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__float.mli" ;;
-    "stdcompat__format.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__format.mli" ;;
-    "stdcompat__fun.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__fun.mli" ;;
-    "stdcompat__hashtbl.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__hashtbl.mli" ;;
-    "stdcompat__int.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__int.mli" ;;
-    "stdcompat__int32.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__int32.mli" ;;
-    "stdcompat__int64.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__int64.mli" ;;
-    "stdcompat__lazy.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__lazy.mli" ;;
-    "stdcompat__lexing.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__lexing.mli" ;;
-    "stdcompat__list.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__list.mli" ;;
-    "stdcompat__listLabels.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__listLabels.mli" ;;
-    "stdcompat__map.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__map.mli" ;;
-    "stdcompat__moreLabels.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__moreLabels.mli" ;;
-    "stdcompat__nativeint.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__nativeint.mli" ;;
-    "stdcompat__option.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__option.mli" ;;
-    "stdcompat__printexc.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__printexc.mli" ;;
-    "stdcompat__printf.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__printf.mli" ;;
-    "stdcompat__queue.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__queue.mli" ;;
-    "stdcompat__random.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__random.mli" ;;
-    "stdcompat__result.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__result.mli" ;;
-    "stdcompat__seq.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__seq.mli" ;;
-    "stdcompat__set.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__set.mli" ;;
-    "stdcompat__stack.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__stack.mli" ;;
-    "stdcompat__stdlib.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__stdlib.mli" ;;
-    "stdcompat__string.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__string.mli" ;;
-    "stdcompat__stringLabels.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__stringLabels.mli" ;;
-    "stdcompat__sys.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__sys.mli" ;;
-    "stdcompat__uchar.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__uchar.mli" ;;
-    "stdcompat__weak.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__weak.mli" ;;
-    "stdcompat__in_channel.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__in_channel.mli" ;;
-    "stdcompat__out_channel.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__out_channel.mli" ;;
-    "stdcompat__unit.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__unit.mli" ;;
-    "stdcompat.mli") CONFIG_FILES="$CONFIG_FILES stdcompat.mli" ;;
-    "stdcompat.ml") CONFIG_FILES="$CONFIG_FILES stdcompat.ml" ;;
 
   *) as_fn_error $? "invalid argument: '$ac_config_target'" "$LINENO" 5;;
   esac

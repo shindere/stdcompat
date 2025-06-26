@@ -107,42 +107,39 @@ am__CONFIG_DISTCLEAN_FILES = config.status config.cache config.log \
 mkinstalldirs = $(install_sh) -d
 CONFIG_CLEAN_FILES = META stdcompat__hashtbl_ext.mli \
 	stdcompat__hashtbl_ext.ml stdcompat__init.mli \
-	stdcompat__init.ml stdcompat__root.mli stdcompat__root.ml \
-	stdcompat__tools.mli stdcompat__tools.ml stdcompat_tests.ml \
-	stdcompat__stubs.c stdcompat__pervasives_s.mli \
-	stdcompat__arg_s.mli stdcompat__array_s.mli \
-	stdcompat__arrayLabels_s.mli stdcompat__atomic_s.mli \
-	stdcompat__bool_s.mli stdcompat__buffer_s.mli \
-	stdcompat__bytes_s.mli stdcompat__bytesLabels_s.mli \
-	stdcompat__char_s.mli stdcompat__digest_s.mli \
+	stdcompat__init.ml stdcompat__tools.mli stdcompat__tools.ml \
+	stdcompat_tests.ml stdcompat__stubs.c \
+	stdcompat__pervasives_s.mli stdcompat__arg_s.mli \
+	stdcompat__array_s.mli stdcompat__arrayLabels_s.mli \
+	stdcompat__atomic_s.mli stdcompat__bool_s.mli \
+	stdcompat__buffer_s.mli stdcompat__bytes_s.mli \
+	stdcompat__bytesLabels_s.mli stdcompat__digest_s.mli \
 	stdcompat__domain_s.mli stdcompat__either_s.mli \
-	stdcompat__ephemeron_s.mli stdcompat__filename_s.mli \
-	stdcompat__float_s.mli stdcompat__format_s.mli \
-	stdcompat__fun_s.mli stdcompat__hashtbl_s.mli \
-	stdcompat__in_channel_s.mli stdcompat__int_s.mli \
-	stdcompat__int32_s.mli stdcompat__int64_s.mli \
-	stdcompat__lazy_s.mli stdcompat__lexing_s.mli \
-	stdcompat__list_s.mli stdcompat__listLabels_s.mli \
-	stdcompat__map_s.mli stdcompat__moreLabels_s.mli \
-	stdcompat__nativeint_s.mli stdcompat__option_s.mli \
-	stdcompat__out_channel_s.mli stdcompat__printexc_s.mli \
-	stdcompat__printf_s.mli stdcompat__queue_s.mli \
-	stdcompat__random_s.mli stdcompat__result_s.mli \
-	stdcompat__seq_s.mli stdcompat__set_s.mli \
-	stdcompat__stack_s.mli stdcompat__string_s.mli \
-	stdcompat__stringLabels_s.mli stdcompat__sys_s.mli \
-	stdcompat__uchar_s.mli stdcompat__weak_s.mli \
-	stdcompat__unit_s.mli stdcompat__stdlib_s.mli \
-	stdcompat__pervasives_s.ml stdcompat__arg_s.ml \
-	stdcompat__array_s.ml stdcompat__arrayLabels_s.ml \
-	stdcompat__atomic_s.ml stdcompat__bool_s.ml \
-	stdcompat__buffer_s.ml stdcompat__bytes_s.ml \
-	stdcompat__bytesLabels_s.ml stdcompat__char_s.ml \
-	stdcompat__digest_s.ml stdcompat__domain_s.ml \
-	stdcompat__either_s.ml stdcompat__ephemeron_s.ml \
-	stdcompat__filename_s.ml stdcompat__float_s.ml \
-	stdcompat__format_s.ml stdcompat__fun_s.ml \
-	stdcompat__hashtbl_s.ml stdcompat__int_s.ml \
+	stdcompat__ephemeron_s.mli stdcompat__float_s.mli \
+	stdcompat__format_s.mli stdcompat__hashtbl_s.mli \
+	stdcompat__in_channel_s.mli stdcompat__int32_s.mli \
+	stdcompat__int64_s.mli stdcompat__lazy_s.mli \
+	stdcompat__lexing_s.mli stdcompat__list_s.mli \
+	stdcompat__listLabels_s.mli stdcompat__map_s.mli \
+	stdcompat__moreLabels_s.mli stdcompat__nativeint_s.mli \
+	stdcompat__option_s.mli stdcompat__out_channel_s.mli \
+	stdcompat__printexc_s.mli stdcompat__printf_s.mli \
+	stdcompat__queue_s.mli stdcompat__random_s.mli \
+	stdcompat__result_s.mli stdcompat__seq_s.mli \
+	stdcompat__set_s.mli stdcompat__stack_s.mli \
+	stdcompat__string_s.mli stdcompat__stringLabels_s.mli \
+	stdcompat__sys_s.mli stdcompat__uchar_s.mli \
+	stdcompat__weak_s.mli stdcompat__unit_s.mli \
+	stdcompat__stdlib_s.mli stdcompat__pervasives_s.ml \
+	stdcompat__arg_s.ml stdcompat__array_s.ml \
+	stdcompat__arrayLabels_s.ml stdcompat__atomic_s.ml \
+	stdcompat__bool_s.ml stdcompat__buffer_s.ml \
+	stdcompat__bytes_s.ml stdcompat__bytesLabels_s.ml \
+	stdcompat__char_s.ml stdcompat__digest_s.ml \
+	stdcompat__domain_s.ml stdcompat__either_s.ml \
+	stdcompat__ephemeron_s.ml stdcompat__filename_s.ml \
+	stdcompat__float_s.ml stdcompat__format_s.ml \
+	stdcompat__fun_s.ml stdcompat__hashtbl_s.ml \
 	stdcompat__int32_s.ml stdcompat__int64_s.ml \
 	stdcompat__lazy_s.ml stdcompat__lexing_s.ml \
 	stdcompat__list_s.ml stdcompat__listLabels_s.ml \
@@ -159,43 +156,21 @@ CONFIG_CLEAN_FILES = META stdcompat__hashtbl_ext.mli \
 	stdcompat__arg.ml stdcompat__array.ml \
 	stdcompat__arrayLabels.ml stdcompat__atomic.ml \
 	stdcompat__bool.ml stdcompat__buffer.ml stdcompat__bytes.ml \
-	stdcompat__bytesLabels.ml stdcompat__char.ml \
-	stdcompat__digest.ml stdcompat__domain.ml stdcompat__either.ml \
-	stdcompat__ephemeron.ml stdcompat__filename.ml \
-	stdcompat__float.ml stdcompat__format.ml stdcompat__fun.ml \
-	stdcompat__hashtbl.ml stdcompat__int.ml stdcompat__int32.ml \
-	stdcompat__int64.ml stdcompat__lazy.ml stdcompat__lexing.ml \
-	stdcompat__list.ml stdcompat__listLabels.ml stdcompat__map.ml \
-	stdcompat__moreLabels.ml stdcompat__nativeint.ml \
-	stdcompat__option.ml stdcompat__printexc.ml \
-	stdcompat__printf.ml stdcompat__queue.ml stdcompat__random.ml \
-	stdcompat__result.ml stdcompat__seq.ml stdcompat__set.ml \
-	stdcompat__stack.ml stdcompat__stdlib.ml stdcompat__string.ml \
-	stdcompat__stringLabels.ml stdcompat__sys.ml \
+	stdcompat__char.ml stdcompat__digest.ml stdcompat__domain.ml \
+	stdcompat__either.ml stdcompat__ephemeron.ml \
+	stdcompat__filename.ml stdcompat__float.ml \
+	stdcompat__format.ml stdcompat__fun.ml stdcompat__hashtbl.ml \
+	stdcompat__int.ml stdcompat__int32.ml stdcompat__int64.ml \
+	stdcompat__lazy.ml stdcompat__lexing.ml stdcompat__list.ml \
+	stdcompat__map.ml stdcompat__moreLabels.ml \
+	stdcompat__nativeint.ml stdcompat__option.ml \
+	stdcompat__printexc.ml stdcompat__printf.ml \
+	stdcompat__queue.ml stdcompat__random.ml stdcompat__result.ml \
+	stdcompat__seq.ml stdcompat__set.ml stdcompat__stack.ml \
+	stdcompat__stdlib.ml stdcompat__string.ml stdcompat__sys.ml \
 	stdcompat__uchar.ml stdcompat__weak.ml \
 	stdcompat__in_channel.ml stdcompat__out_channel.ml \
-	stdcompat__unit.ml stdcompat__pervasives.mli \
-	stdcompat__arg.mli stdcompat__array.mli \
-	stdcompat__arrayLabels.mli stdcompat__atomic.mli \
-	stdcompat__bool.mli stdcompat__buffer.mli stdcompat__bytes.mli \
-	stdcompat__bytesLabels.mli stdcompat__char.mli \
-	stdcompat__digest.mli stdcompat__domain.mli \
-	stdcompat__either.mli stdcompat__ephemeron.mli \
-	stdcompat__filename.mli stdcompat__float.mli \
-	stdcompat__format.mli stdcompat__fun.mli \
-	stdcompat__hashtbl.mli stdcompat__int.mli stdcompat__int32.mli \
-	stdcompat__int64.mli stdcompat__lazy.mli stdcompat__lexing.mli \
-	stdcompat__list.mli stdcompat__listLabels.mli \
-	stdcompat__map.mli stdcompat__moreLabels.mli \
-	stdcompat__nativeint.mli stdcompat__option.mli \
-	stdcompat__printexc.mli stdcompat__printf.mli \
-	stdcompat__queue.mli stdcompat__random.mli \
-	stdcompat__result.mli stdcompat__seq.mli stdcompat__set.mli \
-	stdcompat__stack.mli stdcompat__stdlib.mli \
-	stdcompat__string.mli stdcompat__stringLabels.mli \
-	stdcompat__sys.mli stdcompat__uchar.mli stdcompat__weak.mli \
-	stdcompat__in_channel.mli stdcompat__out_channel.mli \
-	stdcompat__unit.mli stdcompat.mli stdcompat.ml
+	stdcompat__unit.ml
 CONFIG_CLEAN_VPATH_FILES =
 am__vpath_adj_setup = srcdirstrip=`echo "$(srcdir)" | sed 's|.|.|g'`;
 am__vpath_adj = case $$p in \
@@ -246,148 +221,99 @@ am__can_run_installinfo = \
   esac
 am__tagged_files = $(HEADERS) $(SOURCES) $(TAGS_FILES) $(LISP)
 am__DIST_COMMON = $(srcdir)/META.in $(srcdir)/Makefile.in \
-	$(srcdir)/stdcompat.ml.in $(srcdir)/stdcompat.mli.in \
-	$(srcdir)/stdcompat__arg.ml.in $(srcdir)/stdcompat__arg.mli.in \
+	$(srcdir)/stdcompat__arg.ml.in \
 	$(srcdir)/stdcompat__arg_s.mli.in \
 	$(srcdir)/stdcompat__array.ml.in \
-	$(srcdir)/stdcompat__array.mli.in \
 	$(srcdir)/stdcompat__arrayLabels.ml.in \
-	$(srcdir)/stdcompat__arrayLabels.mli.in \
 	$(srcdir)/stdcompat__arrayLabels_s.mli.in \
 	$(srcdir)/stdcompat__array_s.mli.in \
 	$(srcdir)/stdcompat__atomic.ml.in \
-	$(srcdir)/stdcompat__atomic.mli.in \
 	$(srcdir)/stdcompat__atomic_s.mli.in \
 	$(srcdir)/stdcompat__bool.ml.in \
-	$(srcdir)/stdcompat__bool.mli.in \
 	$(srcdir)/stdcompat__bool_s.mli.in \
 	$(srcdir)/stdcompat__buffer.ml.in \
-	$(srcdir)/stdcompat__buffer.mli.in \
 	$(srcdir)/stdcompat__buffer_s.mli.in \
 	$(srcdir)/stdcompat__bytes.ml.in \
-	$(srcdir)/stdcompat__bytes.mli.in \
-	$(srcdir)/stdcompat__bytesLabels.ml.in \
-	$(srcdir)/stdcompat__bytesLabels.mli.in \
 	$(srcdir)/stdcompat__bytesLabels_s.mli.in \
 	$(srcdir)/stdcompat__bytes_s.mli.in \
 	$(srcdir)/stdcompat__char.ml.in \
-	$(srcdir)/stdcompat__char.mli.in \
-	$(srcdir)/stdcompat__char_s.mli.in \
+	$(srcdir)/stdcompat__char_s.mli \
 	$(srcdir)/stdcompat__digest.ml.in \
-	$(srcdir)/stdcompat__digest.mli.in \
 	$(srcdir)/stdcompat__digest_s.mli.in \
 	$(srcdir)/stdcompat__domain.ml.in \
-	$(srcdir)/stdcompat__domain.mli.in \
 	$(srcdir)/stdcompat__domain_s.mli.in \
 	$(srcdir)/stdcompat__either.ml.in \
-	$(srcdir)/stdcompat__either.mli.in \
 	$(srcdir)/stdcompat__either_s.mli.in \
 	$(srcdir)/stdcompat__ephemeron.ml.in \
-	$(srcdir)/stdcompat__ephemeron.mli.in \
 	$(srcdir)/stdcompat__ephemeron_s.mli.in \
 	$(srcdir)/stdcompat__filename.ml.in \
-	$(srcdir)/stdcompat__filename.mli.in \
-	$(srcdir)/stdcompat__filename_s.mli.in \
+	$(srcdir)/stdcompat__filename_s.mli \
 	$(srcdir)/stdcompat__float.ml.in \
-	$(srcdir)/stdcompat__float.mli.in \
 	$(srcdir)/stdcompat__float_s.mli.in \
 	$(srcdir)/stdcompat__format.ml.in \
-	$(srcdir)/stdcompat__format.mli.in \
 	$(srcdir)/stdcompat__format_s.mli.in \
-	$(srcdir)/stdcompat__fun.ml.in $(srcdir)/stdcompat__fun.mli.in \
-	$(srcdir)/stdcompat__fun_s.mli.in \
+	$(srcdir)/stdcompat__fun.ml.in $(srcdir)/stdcompat__fun_s.mli \
 	$(srcdir)/stdcompat__hashtbl.ml.in \
-	$(srcdir)/stdcompat__hashtbl.mli.in \
 	$(srcdir)/stdcompat__hashtbl_ext.ml.in \
 	$(srcdir)/stdcompat__hashtbl_ext.mli.in \
 	$(srcdir)/stdcompat__hashtbl_s.mli.in \
 	$(srcdir)/stdcompat__in_channel.ml.in \
-	$(srcdir)/stdcompat__in_channel.mli.in \
 	$(srcdir)/stdcompat__in_channel_s.mli.in \
 	$(srcdir)/stdcompat__init.mli.in \
-	$(srcdir)/stdcompat__int.ml.in $(srcdir)/stdcompat__int.mli.in \
+	$(srcdir)/stdcompat__int.ml.in \
 	$(srcdir)/stdcompat__int32.ml.in \
-	$(srcdir)/stdcompat__int32.mli.in \
 	$(srcdir)/stdcompat__int32_s.mli.in \
 	$(srcdir)/stdcompat__int64.ml.in \
-	$(srcdir)/stdcompat__int64.mli.in \
 	$(srcdir)/stdcompat__int64_s.mli.in \
-	$(srcdir)/stdcompat__int_s.mli.in \
 	$(srcdir)/stdcompat__lazy.ml.in \
-	$(srcdir)/stdcompat__lazy.mli.in \
 	$(srcdir)/stdcompat__lazy_s.mli.in \
 	$(srcdir)/stdcompat__lexing.ml.in \
-	$(srcdir)/stdcompat__lexing.mli.in \
 	$(srcdir)/stdcompat__lexing_s.mli.in \
 	$(srcdir)/stdcompat__list.ml.in \
-	$(srcdir)/stdcompat__list.mli.in \
-	$(srcdir)/stdcompat__listLabels.ml.in \
-	$(srcdir)/stdcompat__listLabels.mli.in \
 	$(srcdir)/stdcompat__listLabels_s.mli.in \
 	$(srcdir)/stdcompat__list_s.mli.in \
-	$(srcdir)/stdcompat__map.ml.in $(srcdir)/stdcompat__map.mli.in \
+	$(srcdir)/stdcompat__map.ml.in \
 	$(srcdir)/stdcompat__map_s.mli.in \
 	$(srcdir)/stdcompat__moreLabels.ml.in \
-	$(srcdir)/stdcompat__moreLabels.mli.in \
 	$(srcdir)/stdcompat__moreLabels_s.mli.in \
 	$(srcdir)/stdcompat__nativeint.ml.in \
-	$(srcdir)/stdcompat__nativeint.mli.in \
 	$(srcdir)/stdcompat__nativeint_s.mli.in \
 	$(srcdir)/stdcompat__option.ml.in \
-	$(srcdir)/stdcompat__option.mli.in \
 	$(srcdir)/stdcompat__option_s.mli.in \
 	$(srcdir)/stdcompat__out_channel.ml.in \
-	$(srcdir)/stdcompat__out_channel.mli.in \
 	$(srcdir)/stdcompat__out_channel_s.mli.in \
 	$(srcdir)/stdcompat__pervasives.ml.in \
-	$(srcdir)/stdcompat__pervasives.mli.in \
 	$(srcdir)/stdcompat__pervasives_s.mli.in \
 	$(srcdir)/stdcompat__printexc.ml.in \
-	$(srcdir)/stdcompat__printexc.mli.in \
 	$(srcdir)/stdcompat__printexc_s.mli.in \
 	$(srcdir)/stdcompat__printf.ml.in \
-	$(srcdir)/stdcompat__printf.mli.in \
 	$(srcdir)/stdcompat__printf_s.mli.in \
 	$(srcdir)/stdcompat__queue.ml.in \
-	$(srcdir)/stdcompat__queue.mli.in \
 	$(srcdir)/stdcompat__queue_s.mli.in \
 	$(srcdir)/stdcompat__random.ml.in \
-	$(srcdir)/stdcompat__random.mli.in \
 	$(srcdir)/stdcompat__random_s.mli.in \
 	$(srcdir)/stdcompat__result.ml.in \
-	$(srcdir)/stdcompat__result.mli.in \
 	$(srcdir)/stdcompat__result_s.mli.in \
-	$(srcdir)/stdcompat__root.ml.in \
-	$(srcdir)/stdcompat__root.mli.in \
-	$(srcdir)/stdcompat__seq.ml.in $(srcdir)/stdcompat__seq.mli.in \
+	$(srcdir)/stdcompat__seq.ml.in \
 	$(srcdir)/stdcompat__seq_s.mli.in \
-	$(srcdir)/stdcompat__set.ml.in $(srcdir)/stdcompat__set.mli.in \
+	$(srcdir)/stdcompat__set.ml.in \
 	$(srcdir)/stdcompat__set_s.mli.in \
 	$(srcdir)/stdcompat__stack.ml.in \
-	$(srcdir)/stdcompat__stack.mli.in \
 	$(srcdir)/stdcompat__stack_s.mli.in \
 	$(srcdir)/stdcompat__stdlib.ml.in \
-	$(srcdir)/stdcompat__stdlib.mli.in \
 	$(srcdir)/stdcompat__stdlib_s.mli.in \
 	$(srcdir)/stdcompat__string.ml.in \
-	$(srcdir)/stdcompat__string.mli.in \
-	$(srcdir)/stdcompat__stringLabels.ml.in \
-	$(srcdir)/stdcompat__stringLabels.mli.in \
 	$(srcdir)/stdcompat__stringLabels_s.mli.in \
 	$(srcdir)/stdcompat__string_s.mli.in \
 	$(srcdir)/stdcompat__stubs.c.in $(srcdir)/stdcompat__sys.ml.in \
-	$(srcdir)/stdcompat__sys.mli.in \
 	$(srcdir)/stdcompat__sys_s.mli.in \
 	$(srcdir)/stdcompat__tools.ml.in \
 	$(srcdir)/stdcompat__tools.mli.in \
 	$(srcdir)/stdcompat__uchar.ml.in \
-	$(srcdir)/stdcompat__uchar.mli.in \
 	$(srcdir)/stdcompat__uchar_s.mli.in \
 	$(srcdir)/stdcompat__unit.ml.in \
-	$(srcdir)/stdcompat__unit.mli.in \
 	$(srcdir)/stdcompat__unit_s.mli.in \
 	$(srcdir)/stdcompat__weak.ml.in \
-	$(srcdir)/stdcompat__weak.mli.in \
 	$(srcdir)/stdcompat__weak_s.mli.in \
 	$(srcdir)/stdcompat_tests.ml.in AUTHORS COPYING INSTALL NEWS \
 	README.md compile install-sh missing
@@ -910,10 +836,6 @@ stdcompat__init.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__init.mli
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__init.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__init.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__root.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__root.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__root.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__root.ml.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__tools.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__tools.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__tools.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__tools.ml.in
@@ -940,8 +862,6 @@ stdcompat__bytes_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__bytes
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__bytesLabels_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__bytesLabels_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__char_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__char_s.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__digest_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__digest_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__domain_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__domain_s.mli.in
@@ -950,19 +870,13 @@ stdcompat__either_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__eith
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__ephemeron_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__ephemeron_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__filename_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__filename_s.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__float_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__float_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__format_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__format_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__fun_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__fun_s.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__hashtbl_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__hashtbl_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__in_channel_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__in_channel_s.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__int_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__int_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__int32_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__int32_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -1034,7 +948,7 @@ stdcompat__bytes_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__bytes_
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__bytesLabels_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__bytesLabels_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__char_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__char_s.mli.in
+stdcompat__char_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__char_s.mli
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__digest_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__digest_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -1044,17 +958,15 @@ stdcompat__either_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__eithe
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__ephemeron_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__ephemeron_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__filename_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__filename_s.mli.in
+stdcompat__filename_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__filename_s.mli
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__float_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__float_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__format_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__format_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__fun_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__fun_s.mli.in
+stdcompat__fun_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__fun_s.mli
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__hashtbl_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__hashtbl_s.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__int_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__int_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__int32_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__int32_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -1126,8 +1038,6 @@ stdcompat__buffer.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__buffer.
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__bytes.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__bytes.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__bytesLabels.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__bytesLabels.ml.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__char.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__char.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__digest.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__digest.ml.in
@@ -1160,8 +1070,6 @@ stdcompat__lexing.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__lexing.
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__list.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__list.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__listLabels.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__listLabels.ml.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__map.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__map.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__moreLabels.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__moreLabels.ml.in
@@ -1190,8 +1098,6 @@ stdcompat__stdlib.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__stdlib.
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__string.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__string.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__stringLabels.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__stringLabels.ml.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__sys.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__sys.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__uchar.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__uchar.ml.in
@@ -1203,104 +1109,6 @@ stdcompat__in_channel.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__in_
 stdcompat__out_channel.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__out_channel.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__unit.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__unit.ml.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__pervasives.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__pervasives.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__arg.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__arg.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__array.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__array.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__arrayLabels.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__arrayLabels.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__atomic.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__atomic.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__bool.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__bool.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__buffer.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__buffer.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__bytes.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__bytes.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__bytesLabels.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__bytesLabels.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__char.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__char.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__digest.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__digest.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__domain.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__domain.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__either.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__either.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__ephemeron.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__ephemeron.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__filename.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__filename.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__float.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__float.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__format.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__format.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__fun.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__fun.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__hashtbl.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__hashtbl.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__int.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__int.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__int32.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__int32.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__int64.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__int64.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__lazy.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__lazy.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__lexing.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__lexing.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__list.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__list.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__listLabels.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__listLabels.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__map.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__map.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__moreLabels.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__moreLabels.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__nativeint.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__nativeint.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__option.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__option.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__printexc.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__printexc.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__printf.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__printf.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__queue.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__queue.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__random.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__random.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__result.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__result.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__seq.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__seq.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__set.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__set.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__stack.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__stack.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__stdlib.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__stdlib.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__string.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__string.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__stringLabels.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__stringLabels.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__sys.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__sys.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__uchar.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__uchar.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__weak.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__weak.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__in_channel.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__in_channel.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__out_channel.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__out_channel.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat__unit.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__unit.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat.mli: $(top_builddir)/config.status $(srcdir)/stdcompat.mli.in
-	cd $(top_builddir) && $(SHELL) ./config.status $@
-stdcompat.ml: $(top_builddir)/config.status $(srcdir)/stdcompat.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 install-mypkgSCRIPTS: $(mypkg_SCRIPTS)
 	@$(NORMAL_INSTALL)
