@@ -18,9 +18,9 @@ _build/
 /stdcompat_*.ml
 /stdcompat_*.mli
 !/stdcompat__native.mli
-/interface_generator/interface_dumper
-/interface_generator/interface_generator
-/interface_generator/.depend
+/tools/interface_dumper
+/tools/interface_generator
+/tools/.depend
 /stdcompat.ml
 /stdcompat.mli
 /config.guess
