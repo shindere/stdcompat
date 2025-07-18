@@ -20,6 +20,7 @@ stdcompat__bytesLabels_s.mli
 stdcompat__char_s.mli
 stdcompat__digest_s.mli
 stdcompat__domain_s.mli
+stdcompat__dynarray_s.mli
 stdcompat__either_s.mli
 stdcompat__ephemeron_s.mli
 stdcompat__filename_s.mli
@@ -67,6 +68,7 @@ stdcompat__bytesLabels_s.ml
 stdcompat__char_s.ml
 stdcompat__digest_s.ml
 stdcompat__domain_s.ml
+stdcompat__dynarray_s.ml
 stdcompat__either_s.ml
 stdcompat__ephemeron_s.ml
 stdcompat__filename_s.ml
@@ -114,6 +116,7 @@ stdcompat__bytesLabels.ml
 stdcompat__char.ml
 stdcompat__digest.ml
 stdcompat__domain.ml
+stdcompat__dynarray.ml
 stdcompat__either.ml
 stdcompat__ephemeron.ml
 stdcompat__filename.ml
@@ -161,6 +164,7 @@ stdcompat__bytesLabels.mli
 stdcompat__char.mli
 stdcompat__digest.mli
 stdcompat__domain.mli
+stdcompat__dynarray.mli
 stdcompat__either.mli
 stdcompat__ephemeron.mli
 stdcompat__filename.mli

@@ -29,6 +29,8 @@
    stdcompat__digest_s
    stdcompat__domain
    stdcompat__domain_s
+   stdcompat__dynarray
+   stdcompat__dynarray_s
    stdcompat__either
    stdcompat__either_s
    stdcompat__ephemeron

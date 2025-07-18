@@ -5377,6 +5377,8 @@ ac_config_files="$ac_config_files stdcompat__digest_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__domain_s.mli"
 
+ac_config_files="$ac_config_files stdcompat__dynarray_s.mli"
+
 ac_config_files="$ac_config_files stdcompat__either_s.mli"
 
 ac_config_files="$ac_config_files stdcompat__ephemeron_s.mli"
@@ -5470,6 +5472,8 @@ ac_config_files="$ac_config_files stdcompat__char_s.ml:stdcompat__char_s.mli.in"
 ac_config_files="$ac_config_files stdcompat__digest_s.ml:stdcompat__digest_s.mli.in"
 
 ac_config_files="$ac_config_files stdcompat__domain_s.ml:stdcompat__domain_s.mli.in"
+
+ac_config_files="$ac_config_files stdcompat__dynarray_s.ml:stdcompat__dynarray_s.mli.in"
 
 ac_config_files="$ac_config_files stdcompat__either_s.ml:stdcompat__either_s.mli.in"
 
@@ -5565,6 +5569,8 @@ ac_config_files="$ac_config_files stdcompat__digest.ml"
 
 ac_config_files="$ac_config_files stdcompat__domain.ml"
 
+ac_config_files="$ac_config_files stdcompat__dynarray.ml"
+
 ac_config_files="$ac_config_files stdcompat__either.ml"
 
 ac_config_files="$ac_config_files stdcompat__ephemeron.ml"
@@ -5658,6 +5664,8 @@ ac_config_files="$ac_config_files stdcompat__char.mli"
 ac_config_files="$ac_config_files stdcompat__digest.mli"
 
 ac_config_files="$ac_config_files stdcompat__domain.mli"
+
+ac_config_files="$ac_config_files stdcompat__dynarray.mli"
 
 ac_config_files="$ac_config_files stdcompat__either.mli"
 
@@ -6512,6 +6520,7 @@ do
     "stdcompat__char_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__char_s.mli" ;;
     "stdcompat__digest_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__digest_s.mli" ;;
     "stdcompat__domain_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__domain_s.mli" ;;
+    "stdcompat__dynarray_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__dynarray_s.mli" ;;
     "stdcompat__either_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__either_s.mli" ;;
     "stdcompat__ephemeron_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron_s.mli" ;;
     "stdcompat__filename_s.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__filename_s.mli" ;;
@@ -6559,6 +6568,7 @@ do
     "stdcompat__char_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__char_s.ml:stdcompat__char_s.mli.in" ;;
     "stdcompat__digest_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__digest_s.ml:stdcompat__digest_s.mli.in" ;;
     "stdcompat__domain_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__domain_s.ml:stdcompat__domain_s.mli.in" ;;
+    "stdcompat__dynarray_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__dynarray_s.ml:stdcompat__dynarray_s.mli.in" ;;
     "stdcompat__either_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__either_s.ml:stdcompat__either_s.mli.in" ;;
     "stdcompat__ephemeron_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron_s.ml:stdcompat__ephemeron_s.mli.in" ;;
     "stdcompat__filename_s.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__filename_s.ml:stdcompat__filename_s.mli.in" ;;
@@ -6606,6 +6616,7 @@ do
     "stdcompat__char.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__char.ml" ;;
     "stdcompat__digest.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__digest.ml" ;;
     "stdcompat__domain.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__domain.ml" ;;
+    "stdcompat__dynarray.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__dynarray.ml" ;;
     "stdcompat__either.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__either.ml" ;;
     "stdcompat__ephemeron.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron.ml" ;;
     "stdcompat__filename.ml") CONFIG_FILES="$CONFIG_FILES stdcompat__filename.ml" ;;
@@ -6653,6 +6664,7 @@ do
     "stdcompat__char.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__char.mli" ;;
     "stdcompat__digest.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__digest.mli" ;;
     "stdcompat__domain.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__domain.mli" ;;
+    "stdcompat__dynarray.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__dynarray.mli" ;;
     "stdcompat__either.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__either.mli" ;;
     "stdcompat__ephemeron.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__ephemeron.mli" ;;
     "stdcompat__filename.mli") CONFIG_FILES="$CONFIG_FILES stdcompat__filename.mli" ;;

@@ -24,7 +24,7 @@ EXTRA_DIST= stdcompat.opam dune stdcompat.ml stdcompat__native.ml_byte \
         stdcompat__either.mli stdcompat__atomic.mli \
 	stdcompat__unit.mli \
 	stdcompat__in_channel.mli stdcompat__out_channel.mli autogen VERSION \
-	dune-project dune
+	stdcompat__dynarray.mli dune-project dune
 
 MODULES = stdcompat__init.ml stdcompat__root.ml \
 	stdcompat__either_s.ml stdcompat__either.ml \
@@ -45,6 +45,7 @@ MODULES = stdcompat__init.ml stdcompat__root.ml \
 	stdcompat__int_s.ml \
 	stdcompat__int64_s.ml stdcompat__int32_s.ml stdcompat__filename_s.ml \
 	stdcompat__array_s.ml stdcompat__arrayLabels_s.ml \
+	stdcompat__dynarray_s.ml \
 	stdcompat__float_s.ml stdcompat__queue_s.ml \
 	stdcompat__hashtbl.ml \
 	stdcompat__ephemeron_s.ml \

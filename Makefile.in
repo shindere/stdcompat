@@ -115,30 +115,31 @@ CONFIG_CLEAN_FILES = META stdcompat__hashtbl_ext.mli \
 	stdcompat__bool_s.mli stdcompat__buffer_s.mli \
 	stdcompat__bytes_s.mli stdcompat__bytesLabels_s.mli \
 	stdcompat__char_s.mli stdcompat__digest_s.mli \
-	stdcompat__domain_s.mli stdcompat__either_s.mli \
-	stdcompat__ephemeron_s.mli stdcompat__filename_s.mli \
-	stdcompat__float_s.mli stdcompat__format_s.mli \
-	stdcompat__fun_s.mli stdcompat__hashtbl_s.mli \
-	stdcompat__in_channel_s.mli stdcompat__int_s.mli \
-	stdcompat__int32_s.mli stdcompat__int64_s.mli \
-	stdcompat__lazy_s.mli stdcompat__lexing_s.mli \
-	stdcompat__list_s.mli stdcompat__listLabels_s.mli \
-	stdcompat__map_s.mli stdcompat__moreLabels_s.mli \
-	stdcompat__nativeint_s.mli stdcompat__option_s.mli \
-	stdcompat__out_channel_s.mli stdcompat__printexc_s.mli \
-	stdcompat__printf_s.mli stdcompat__queue_s.mli \
-	stdcompat__random_s.mli stdcompat__result_s.mli \
-	stdcompat__seq_s.mli stdcompat__set_s.mli \
-	stdcompat__stack_s.mli stdcompat__string_s.mli \
-	stdcompat__stringLabels_s.mli stdcompat__sys_s.mli \
-	stdcompat__uchar_s.mli stdcompat__weak_s.mli \
-	stdcompat__unit_s.mli stdcompat__stdlib_s.mli \
-	stdcompat__pervasives_s.ml stdcompat__arg_s.ml \
-	stdcompat__array_s.ml stdcompat__arrayLabels_s.ml \
-	stdcompat__atomic_s.ml stdcompat__bool_s.ml \
-	stdcompat__buffer_s.ml stdcompat__bytes_s.ml \
-	stdcompat__bytesLabels_s.ml stdcompat__char_s.ml \
-	stdcompat__digest_s.ml stdcompat__domain_s.ml \
+	stdcompat__domain_s.mli stdcompat__dynarray_s.mli \
+	stdcompat__either_s.mli stdcompat__ephemeron_s.mli \
+	stdcompat__filename_s.mli stdcompat__float_s.mli \
+	stdcompat__format_s.mli stdcompat__fun_s.mli \
+	stdcompat__hashtbl_s.mli stdcompat__in_channel_s.mli \
+	stdcompat__int_s.mli stdcompat__int32_s.mli \
+	stdcompat__int64_s.mli stdcompat__lazy_s.mli \
+	stdcompat__lexing_s.mli stdcompat__list_s.mli \
+	stdcompat__listLabels_s.mli stdcompat__map_s.mli \
+	stdcompat__moreLabels_s.mli stdcompat__nativeint_s.mli \
+	stdcompat__option_s.mli stdcompat__out_channel_s.mli \
+	stdcompat__printexc_s.mli stdcompat__printf_s.mli \
+	stdcompat__queue_s.mli stdcompat__random_s.mli \
+	stdcompat__result_s.mli stdcompat__seq_s.mli \
+	stdcompat__set_s.mli stdcompat__stack_s.mli \
+	stdcompat__string_s.mli stdcompat__stringLabels_s.mli \
+	stdcompat__sys_s.mli stdcompat__uchar_s.mli \
+	stdcompat__weak_s.mli stdcompat__unit_s.mli \
+	stdcompat__stdlib_s.mli stdcompat__pervasives_s.ml \
+	stdcompat__arg_s.ml stdcompat__array_s.ml \
+	stdcompat__arrayLabels_s.ml stdcompat__atomic_s.ml \
+	stdcompat__bool_s.ml stdcompat__buffer_s.ml \
+	stdcompat__bytes_s.ml stdcompat__bytesLabels_s.ml \
+	stdcompat__char_s.ml stdcompat__digest_s.ml \
+	stdcompat__domain_s.ml stdcompat__dynarray_s.ml \
 	stdcompat__either_s.ml stdcompat__ephemeron_s.ml \
 	stdcompat__filename_s.ml stdcompat__float_s.ml \
 	stdcompat__format_s.ml stdcompat__fun_s.ml \
@@ -160,7 +161,8 @@ CONFIG_CLEAN_FILES = META stdcompat__hashtbl_ext.mli \
 	stdcompat__arrayLabels.ml stdcompat__atomic.ml \
 	stdcompat__bool.ml stdcompat__buffer.ml stdcompat__bytes.ml \
 	stdcompat__bytesLabels.ml stdcompat__char.ml \
-	stdcompat__digest.ml stdcompat__domain.ml stdcompat__either.ml \
+	stdcompat__digest.ml stdcompat__domain.ml \
+	stdcompat__dynarray.ml stdcompat__either.ml \
 	stdcompat__ephemeron.ml stdcompat__filename.ml \
 	stdcompat__float.ml stdcompat__format.ml stdcompat__fun.ml \
 	stdcompat__hashtbl.ml stdcompat__int.ml stdcompat__int32.ml \
@@ -180,9 +182,9 @@ CONFIG_CLEAN_FILES = META stdcompat__hashtbl_ext.mli \
 	stdcompat__bool.mli stdcompat__buffer.mli stdcompat__bytes.mli \
 	stdcompat__bytesLabels.mli stdcompat__char.mli \
 	stdcompat__digest.mli stdcompat__domain.mli \
-	stdcompat__either.mli stdcompat__ephemeron.mli \
-	stdcompat__filename.mli stdcompat__float.mli \
-	stdcompat__format.mli stdcompat__fun.mli \
+	stdcompat__dynarray.mli stdcompat__either.mli \
+	stdcompat__ephemeron.mli stdcompat__filename.mli \
+	stdcompat__float.mli stdcompat__format.mli stdcompat__fun.mli \
 	stdcompat__hashtbl.mli stdcompat__int.mli stdcompat__int32.mli \
 	stdcompat__int64.mli stdcompat__lazy.mli stdcompat__lexing.mli \
 	stdcompat__list.mli stdcompat__listLabels.mli \
@@ -279,6 +281,9 @@ am__DIST_COMMON = $(srcdir)/META.in $(srcdir)/Makefile.in \
 	$(srcdir)/stdcompat__domain.ml.in \
 	$(srcdir)/stdcompat__domain.mli.in \
 	$(srcdir)/stdcompat__domain_s.mli.in \
+	$(srcdir)/stdcompat__dynarray.ml.in \
+	$(srcdir)/stdcompat__dynarray.mli.in \
+	$(srcdir)/stdcompat__dynarray_s.mli.in \
 	$(srcdir)/stdcompat__either.ml.in \
 	$(srcdir)/stdcompat__either.mli.in \
 	$(srcdir)/stdcompat__either_s.mli.in \
@@ -781,7 +786,7 @@ EXTRA_DIST = stdcompat.opam dune stdcompat.ml stdcompat__native.ml_byte \
         stdcompat__either.mli stdcompat__atomic.mli \
 	stdcompat__unit.mli \
 	stdcompat__in_channel.mli stdcompat__out_channel.mli autogen VERSION \
-	dune-project dune
+	stdcompat__dynarray.mli dune-project dune
 
 MODULES = stdcompat__init.ml stdcompat__root.ml \
 	stdcompat__either_s.ml stdcompat__either.ml \
@@ -802,6 +807,7 @@ MODULES = stdcompat__init.ml stdcompat__root.ml \
 	stdcompat__int_s.ml \
 	stdcompat__int64_s.ml stdcompat__int32_s.ml stdcompat__filename_s.ml \
 	stdcompat__array_s.ml stdcompat__arrayLabels_s.ml \
+	stdcompat__dynarray_s.ml \
 	stdcompat__float_s.ml stdcompat__queue_s.ml \
 	stdcompat__hashtbl.ml \
 	stdcompat__ephemeron_s.ml \
@@ -946,6 +952,8 @@ stdcompat__digest_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__dige
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__domain_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__domain_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
+stdcompat__dynarray_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__dynarray_s.mli.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__either_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__either_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__ephemeron_s.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__ephemeron_s.mli.in
@@ -1039,6 +1047,8 @@ stdcompat__char_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__char_s.
 stdcompat__digest_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__digest_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__domain_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__domain_s.mli.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+stdcompat__dynarray_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__dynarray_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__either_s.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__either_s.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
@@ -1134,6 +1144,8 @@ stdcompat__digest.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__digest.
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__domain.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__domain.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
+stdcompat__dynarray.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__dynarray.ml.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__either.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__either.ml.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__ephemeron.ml: $(top_builddir)/config.status $(srcdir)/stdcompat__ephemeron.ml.in
@@ -1227,6 +1239,8 @@ stdcompat__char.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__char.mli
 stdcompat__digest.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__digest.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__domain.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__domain.mli.in
+	cd $(top_builddir) && $(SHELL) ./config.status $@
+stdcompat__dynarray.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__dynarray.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
 stdcompat__either.mli: $(top_builddir)/config.status $(srcdir)/stdcompat__either.mli.in
 	cd $(top_builddir) && $(SHELL) ./config.status $@
