@@ -175,6 +175,14 @@
         (with-stdout-to stdcompat__domain_s.mli
           (run %{gen} --source-type ocaml)))))
 (rule
+  (targets stdcompat__dynarray_s.mli)
+  (deps
+    (:gen tools/stdcompatpp.exe) stdcompat__dynarray_s.mli.in)
+    (action
+      (with-stdin-from stdcompat__dynarray_s.mli.in
+        (with-stdout-to stdcompat__dynarray_s.mli
+          (run %{gen} --source-type ocaml)))))
+(rule
   (targets stdcompat__either_s.mli)
   (deps
     (:gen tools/stdcompatpp.exe) stdcompat__either_s.mli.in)
@@ -549,6 +557,14 @@
     (action
       (with-stdin-from stdcompat__domain_s.mli.in
         (with-stdout-to stdcompat__domain_s.ml
+          (run %{gen} --source-type ocaml)))))
+(rule
+  (targets stdcompat__dynarray_s.ml)
+  (deps
+    (:gen tools/stdcompatpp.exe) stdcompat__dynarray_s.mli.in)
+    (action
+      (with-stdin-from stdcompat__dynarray_s.mli.in
+        (with-stdout-to stdcompat__dynarray_s.ml
           (run %{gen} --source-type ocaml)))))
 (rule
   (targets stdcompat__either_s.ml)
@@ -927,6 +943,14 @@
         (with-stdout-to stdcompat__domain.ml
           (run %{gen} --source-type ocaml)))))
 (rule
+  (targets stdcompat__dynarray.ml)
+  (deps
+    (:gen tools/stdcompatpp.exe) stdcompat__dynarray.ml.in)
+    (action
+      (with-stdin-from stdcompat__dynarray.ml.in
+        (with-stdout-to stdcompat__dynarray.ml
+          (run %{gen} --source-type ocaml)))))
+(rule
   (targets stdcompat__either.ml)
   (deps
     (:gen tools/stdcompatpp.exe) stdcompat__either.ml.in)
@@ -1301,6 +1325,14 @@
     (action
       (with-stdin-from stdcompat__domain.mli.in
         (with-stdout-to stdcompat__domain.mli
+          (run %{gen} --source-type ocaml)))))
+(rule
+  (targets stdcompat__dynarray.mli)
+  (deps
+    (:gen tools/stdcompatpp.exe) stdcompat__dynarray.mli.in)
+    (action
+      (with-stdin-from stdcompat__dynarray.mli.in
+        (with-stdout-to stdcompat__dynarray.mli
           (run %{gen} --source-type ocaml)))))
 (rule
   (targets stdcompat__either.mli)
