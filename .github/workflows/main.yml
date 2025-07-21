@@ -23,7 +23,7 @@ jobs:
           - 5.0.x
           - 5.1.x
           - 5.2.x
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -71,7 +71,7 @@ jobs:
 #          - dune
 #          - make
 #          - make-no-magic
-#    runs-on: ubuntu-22.04
+#    runs-on: ubuntu-latest
 #    container:
 #      image: ghcr.io/thierry-martinez/stdcompat-ocaml-5-beta
 #      credentials:
